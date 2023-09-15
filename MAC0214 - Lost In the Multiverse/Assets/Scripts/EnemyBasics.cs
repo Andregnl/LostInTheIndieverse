@@ -5,32 +5,32 @@ using UnityEngine;
 public class EnemyBasics : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private float health;
-    [SerializeField] private float maxHealth;
     [SerializeField] private float damage;
     [SerializeField] private float damageInterval;
-
-    public virtual void Walk(){}
-
-    public virtual void Attack(){}
-
-    public float GetCurrentHealth(){
-        return health;
+    [SerializeField] private Vector2 direction;
+    private GameObject currentTarget;
+    public virtual void Walk(){
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    public virtual void Heal(float healing){
-        float newHealth = health + healing;
-        if(newHealth > maxHealth) health = maxHealth;
-        else health += healing;
+    public void SetMovementSpeed (float newspeed)
+    {
+        speed = newspeed;
     }
 
-    public virtual void TakeDamage(float damage){
-        float newHealth = health - damage;
-        if(newHealth <= 0) Die();
-        else health -= damage;
+    public void Attack(GameObject target)
+    {
+        currentTarget = target;
     }
 
-    public virtual void Die(){
-        Object.Destroy(gameObject);
+    public void StrikeCurrentTarget(float damage)
+    {
+        if (!currentTarget) { return; }
+        Health health = currentTarget.GetComponent<Health>();
+        if (health)
+        {
+            health.TakeDamage(damage);
+        }
     }
+
 }
