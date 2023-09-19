@@ -6,5 +6,6 @@ public class TestEnemy : EnemyBasics
 {
     void Update(){
         Walk();
+        DetectTarget();
     }
 }
