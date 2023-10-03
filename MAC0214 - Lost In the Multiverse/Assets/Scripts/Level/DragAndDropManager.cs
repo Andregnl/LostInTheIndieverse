@@ -35,7 +35,22 @@ public class DragAndDropManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && dragObject)
         {
-            ((DragAndDropItem) dragObject.GetComponent(typeof(DragAndDropItem))).Drop();
+			DragAndDropItem dragAndDropItem = (DragAndDropItem) dragObject.GetComponent(typeof(DragAndDropItem));
+            dragAndDropItem.Drop();
+
+			mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			Collider2D[] targetObjects = Physics2D.OverlapPointAll(mousePosition);
+
+			if (targetObjects.Length > 0)
+			{
+				foreach (var obj in targetObjects)
+				{
+					if (obj.CompareTag("Slot"))
+					{
+						obj.GetComponent<Slot>().OnDrop(dragAndDropItem);
+					}
+				}
+			}
 
             mouseOffset = new Vector3(0, 0, 0);
             dragObject = null;

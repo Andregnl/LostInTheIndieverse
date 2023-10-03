@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DragDrop
   - Tower
+  - Slot
   layers:
   - Default
   - TransparentFX
