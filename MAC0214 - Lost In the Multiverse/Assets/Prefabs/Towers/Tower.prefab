@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 1495181622373469133}
-  projectile: {fileID: 3843859728346020264, guid: 8c4090bb236b92ab38ec9f8596529b51, type: 3}
+  projectile: {fileID: 1567019949314977001, guid: 8c4090bb236b92ab38ec9f8596529b51, type: 3}
   attackDelay: 3
   damage: 10
   animator: {fileID: 5535443712760268328}

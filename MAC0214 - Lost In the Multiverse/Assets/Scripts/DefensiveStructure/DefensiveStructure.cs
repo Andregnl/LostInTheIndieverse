@@ -7,7 +7,7 @@ public enum Direction {LEFT, RIGHT}
 public class DefensiveStructure : MonoBehaviour
 {
 	[SerializeField] GameObject flippableObjects;
-	[SerializeField] protected Projectile projectile;
+	[SerializeField] protected GameObject projectile;
 	[SerializeField] protected float attackDelay = 2.0f;
 	[SerializeField] protected float damage = 10.0f;
 

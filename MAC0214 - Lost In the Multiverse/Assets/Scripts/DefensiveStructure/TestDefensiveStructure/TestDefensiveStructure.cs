@@ -20,12 +20,12 @@ public class TestDefensiveStructure : DefensiveStructure
 
 	public void SpawnProjectile()
 	{
-		Instantiate(projectile,
-					spawnPoint.position,
-					Quaternion.identity,
-					gameObject.transform);
+		GameObject proj = Instantiate(projectile,
+									  spawnPoint.position,
+									  Quaternion.identity,
+									  gameObject.transform);
 
-		Projectile projectileScript = projectile.GetComponent<Projectile>();
+		Projectile projectileScript = proj.GetComponent<Projectile>();
 
 		if (thisDirection == Direction.LEFT)
 			projectileScript.SetParameters(damage, Direction.LEFT);
