@@ -6,6 +6,9 @@ using UnityEngine.EventSystems;
 public class DragAndDropItem : MonoBehaviour
 {
     private Vector3 originPosition;
+
+    public int cost = 50;
+
 	public GameObject prefabToInstantiate;
 
     // Start is called before the first frame update
@@ -14,10 +17,17 @@ public class DragAndDropItem : MonoBehaviour
         originPosition = transform.position;
     }
 
-    public void Drop()
+    public bool Drop(int playerCurrency)
     {
-        SpawnTowerOnGrid();
+        if (cost <= playerCurrency)
+        {
+            SpawnTowerOnGrid();
+            transform.position = originPosition;
+            return true;
+        }
+
         transform.position = originPosition;
+        return false;
     }
 
     void SpawnTowerOnGrid()
