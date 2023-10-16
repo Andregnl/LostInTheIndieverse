@@ -9,10 +9,11 @@ public class DefensiveStructure : MonoBehaviour
 	[SerializeField] GameObject flippableObjects;
 	[SerializeField] protected GameObject projectile;
 	[SerializeField] protected float attackDelay = 2.0f;
-	[SerializeField] protected float damage = 10.0f;
+	[SerializeField] protected int damage = 10;
 
 	protected float currentTime = 0.0f;
 	protected Direction thisDirection;
+	protected int row = -1;
 
     // Update is called once per frame
     void Update()
@@ -32,6 +33,11 @@ public class DefensiveStructure : MonoBehaviour
 			newRot.y = 0.0f;
 
         flippableObjects.transform.rotation = newRot;
+	}
+
+	public void SetRow(int row)
+	{
+		this.row = row;
 	}
 
     public virtual void ExecuteDefensiveBehavior()
