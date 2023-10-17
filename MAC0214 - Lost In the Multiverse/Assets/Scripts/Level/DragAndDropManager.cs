@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DragAndDropManager : MonoBehaviour
 {
     private GameObject dragObject;
     private Vector3 mouseOffset;
 
+    public int playerCurrency = 120;
+
+    [SerializeField] Text currencyLabel;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        UpdateCurrencyLabel();
     }
 
     // Update is called once per frame
@@ -36,24 +41,34 @@ public class DragAndDropManager : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && dragObject)
         {
 			DragAndDropItem dragAndDropItem = (DragAndDropItem) dragObject.GetComponent(typeof(DragAndDropItem));
-            dragAndDropItem.Drop();
 
-			mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Collider2D[] targetObjects = Physics2D.OverlapPointAll(mousePosition);
+            if (dragAndDropItem.Drop(playerCurrency))
+            {
+                playerCurrency -= dragAndDropItem.cost;
+                UpdateCurrencyLabel();
 
-			if (targetObjects.Length > 0)
-			{
-				foreach (var obj in targetObjects)
-				{
-					if (obj.CompareTag("Slot"))
-					{
-						obj.GetComponent<Slot>().OnDrop(dragAndDropItem);
-					}
-				}
-			}
+                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Collider2D[] targetObjects = Physics2D.OverlapPointAll(mousePosition);
+
+                if (targetObjects.Length > 0)
+                {
+                    foreach (var obj in targetObjects)
+                    {
+                        if (obj.CompareTag("Slot"))
+                        {
+                            obj.GetComponent<Slot>().OnDrop(dragAndDropItem);
+                        }
+                    }
+                }
+            }
 
             mouseOffset = new Vector3(0, 0, 0);
             dragObject = null;
         }
+    }
+
+    void UpdateCurrencyLabel()
+    {
+        currencyLabel.text = "Currency: " + playerCurrency;
     }
 }
