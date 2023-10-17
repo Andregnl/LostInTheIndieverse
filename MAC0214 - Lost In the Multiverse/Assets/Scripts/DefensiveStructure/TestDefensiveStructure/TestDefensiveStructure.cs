@@ -28,8 +28,8 @@ public class TestDefensiveStructure : DefensiveStructure
 		Projectile projectileScript = proj.GetComponent<Projectile>();
 
 		if (thisDirection == Direction.LEFT)
-			projectileScript.SetParameters(damage, Direction.LEFT);
+			projectileScript.SetParameters(damage, Direction.LEFT, row);
 		else
-			projectileScript.SetParameters(damage, Direction.RIGHT);
+			projectileScript.SetParameters(damage, Direction.RIGHT, row);
 	}
 }

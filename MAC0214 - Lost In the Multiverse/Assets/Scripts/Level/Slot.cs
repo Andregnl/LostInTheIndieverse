@@ -5,6 +5,7 @@ using UnityEngine;
 public class Slot : MonoBehaviour
 {
 	[SerializeField] Direction direction;
+	[SerializeField] int row = -1;
 
 	GameObject instantiatedObject = null;
 
@@ -20,6 +21,7 @@ public class Slot : MonoBehaviour
 										 transform);
 
 		instantiatedObject.GetComponent<DefensiveStructure>().SetDirection(direction);
+		instantiatedObject.GetComponent<DefensiveStructure>().SetRow(row);
 
 		instantiatedObject.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 	}

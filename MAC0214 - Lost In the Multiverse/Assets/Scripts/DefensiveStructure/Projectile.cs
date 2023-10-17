@@ -7,14 +7,37 @@ public class Projectile : MonoBehaviour
 	[SerializeField] GameObject flippableObjects;
 	[SerializeField] float speed;
 
+	int row = -1;
 	float currentDuration = 0.0f;
 	float maxDuration = 10.0f;
-	float damage;
+	int damage;
 	Direction diretion;
 
 	void FixedUpdate()
 	{
 		ExecuteProjectileBehavior();
+	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		if (!col.CompareTag("Enemy")) return;
+
+		EnemyBasics thatEnemy = col.GetComponent<EnemyBasics>();
+		if (thatEnemy == null)
+		{
+			Debug.LogError("Enemy does not have Enemy Script!");
+			return;
+		}
+
+		if (thatEnemy.GetRow() != row) return;
+
+		thatEnemy.TakeDamage(damage);
+		ExpireVisualSequence();
+	}
+
+	public virtual void ExpireVisualSequence()
+	{
+		Destroy(gameObject);
 	}
 
 	public virtual void ExecuteProjectileBehavior()
@@ -30,9 +53,10 @@ public class Projectile : MonoBehaviour
 		}
 	}
 
-	public virtual void SetParameters(float damage, Direction direction)
+	public virtual void SetParameters(int damage, Direction direction, int row)
 	{
 		this.damage = damage;
+		this.row = row;
 
 		if (direction == Direction.LEFT)
 		{
