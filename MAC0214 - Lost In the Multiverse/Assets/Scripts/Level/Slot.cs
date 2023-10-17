@@ -9,9 +9,11 @@ public class Slot : MonoBehaviour
 
 	GameObject instantiatedObject = null;
 
+	[SerializeField] private bool canPut = true;
+
 	public void OnDrop(DragAndDropItem dragAndDropItem)
 	{
-		if (!dragAndDropItem || instantiatedObject != null) return;
+		if (!dragAndDropItem || instantiatedObject != null || !canPut) return;
 
 		instantiatedObject = Instantiate(dragAndDropItem.prefabToInstantiate,
 										 transform.position,
