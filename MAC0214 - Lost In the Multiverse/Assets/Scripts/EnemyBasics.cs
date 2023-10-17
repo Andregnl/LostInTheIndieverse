@@ -11,7 +11,9 @@ public class EnemyBasics : MonoBehaviour
     [SerializeField] Transform visionObject;
     [SerializeField] float detectionDistance = 20.0f;
     [SerializeField] LayerMask playerAndGroundLayer;
+    [SerializeField] int hp = 100;
     private GameObject currentTarget;
+    private int row = -1;
     
     public virtual void Walk(){
         transform.Translate(direction * speed * Time.deltaTime);
@@ -46,6 +48,33 @@ public class EnemyBasics : MonoBehaviour
     {
         if (DetectTarget())
         currentTarget = target;
+    }
+
+    public void SetRow(int row)
+    {
+        this.row = row;
+    }
+
+    public int GetRow()
+    {
+        return row;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+        if (hp < 0) DeathVisualSequence();
+        else DamageVisualSequence();
+    }
+
+    private void DeathVisualSequence()
+    {
+
+    }
+
+    private void DamageVisualSequence()
+    {
+
     }
 
     public virtual void StrikeCurrentTarget(float damage)
