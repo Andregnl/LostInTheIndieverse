@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBasics : MonoBehaviour
+public class EnemyBasics : Entity
 {
     [SerializeField] private float speed;
     [SerializeField] private float damage;
     [SerializeField] private float damageInterval;
-    [SerializeField] private Vector2 direction;
     [SerializeField] Transform visionObject;
     [SerializeField] float detectionDistance = 20.0f;
     [SerializeField] LayerMask playerAndGroundLayer;
     [SerializeField] int hp = 100;
     private GameObject currentTarget;
-    private int row = -1;
     
-    public virtual void Walk(){
-        transform.Translate(direction * speed * Time.deltaTime);
+    public virtual void Walk() {
+		if (thisDirection == Direction.LEFT)
+			transform.Translate(new Vector2(1, 0) * speed * Time.deltaTime);
+		else
+			transform.Translate(new Vector2(-1, 0) * speed * Time.deltaTime);
     }
 
     public void SetMovementSpeed (float newspeed)
@@ -44,37 +45,11 @@ public class EnemyBasics : MonoBehaviour
 
         return false;
     }
+
     public void SetTarget(GameObject target)
     {
         if (DetectTarget())
         currentTarget = target;
-    }
-
-    public void SetRow(int row)
-    {
-        this.row = row;
-    }
-
-    public int GetRow()
-    {
-        return row;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        hp -= damage;
-        if (hp < 0) DeathVisualSequence();
-        else DamageVisualSequence();
-    }
-
-    private void DeathVisualSequence()
-    {
-
-    }
-
-    private void DamageVisualSequence()
-    {
-
     }
 
     public virtual void StrikeCurrentTarget(float damage)

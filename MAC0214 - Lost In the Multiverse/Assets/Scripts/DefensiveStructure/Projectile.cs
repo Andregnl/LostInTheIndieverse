@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
 
 		if (thatEnemy.GetRow() != row) return;
 
-		thatEnemy.TakeDamage(damage);
+		thatEnemy.GetComponent<Health>().TakeDamage(damage);
 		ExpireVisualSequence();
 	}
 

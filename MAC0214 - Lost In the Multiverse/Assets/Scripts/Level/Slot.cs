@@ -25,4 +25,14 @@ public class Slot : MonoBehaviour
 
 		instantiatedObject.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
 	}
+
+	public Direction GetDirection()
+	{
+		return direction;
+	}
+
+	public int GetRow()
+	{
+		return row;
+	}
 }

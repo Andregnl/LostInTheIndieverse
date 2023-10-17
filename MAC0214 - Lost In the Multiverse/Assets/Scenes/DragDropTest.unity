@@ -7265,10 +7265,11 @@ MonoBehaviour:
   waves:
   - name: TestWave
     enemy: {fileID: 1785577725898590725, guid: 1f63517044c1d5d4585e8041670eb531, type: 3}
-    count: 5
+    count: 10
     rate: 1
   spawnPoints:
-  - {fileID: 1209836668}
+  - {fileID: 455204256}
+  - {fileID: 1498378643}
   timeBetweenWaves: 2
 --- !u!4 &1322384200
 Transform:

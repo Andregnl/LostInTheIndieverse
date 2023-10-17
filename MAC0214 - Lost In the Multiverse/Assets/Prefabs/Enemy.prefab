@@ -163,15 +163,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c0d8ab8b2a41646be3e85483501f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flippableObjects: {fileID: 3537954323860607447}
   speed: 3
   damage: 0
   damageInterval: 0
-  direction: {x: -1, y: 0}
   visionObject: {fileID: 3038298996728647976}
   detectionDistance: 200
   playerAndGroundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
+  hp: 100
 --- !u!114 &2213213721760666326
 MonoBehaviour:
   m_ObjectHideFlags: 0
