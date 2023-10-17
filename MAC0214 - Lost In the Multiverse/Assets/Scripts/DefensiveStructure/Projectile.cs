@@ -30,6 +30,8 @@ public class Projectile : MonoBehaviour
 		}
 
 		if (thatEnemy.GetRow() != row) return;
+		Debug.Log("Projectile hit something" + col.gameObject.name + " " + col.gameObject.tag);
+		
 
 		thatEnemy.GetComponent<Health>().TakeDamage(damage);
 		ExpireVisualSequence();
