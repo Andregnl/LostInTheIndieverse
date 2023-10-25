@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         HandlePersistentSettingsData();
-        Debug.Log(settingsData.SFXVolume);
-        Debug.Log(settingsData.musicVolume);
 
         if (Instance != null && Instance != this)
         {
@@ -35,7 +33,6 @@ public class GameManager : MonoBehaviour
 
     public void SaveSettingsData()
     {
-        Debug.Log("Audio saved!");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream saveFile = new FileStream(Application.persistentDataPath + settingsSaveDataPath, FileMode.Create);
         bf.Serialize(saveFile, settingsData);
