@@ -7,7 +7,6 @@ using System.IO;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject startPosObj;
     public static GameManager Instance { get; private set; }
     public SettingsData settingsData = new SettingsData();
 
@@ -18,12 +17,13 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         HandlePersistentSettingsData();
+        Debug.Log(settingsData.SFXVolume);
+        Debug.Log(settingsData.musicVolume);
 
         if (Instance != null && Instance != this)
         {
             // There's already an instance, destroy this one
             Destroy(gameObject);
-            Debug.Log("Deletei");
         }
         else
         {
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveSettingsData()
     {
+        Debug.Log("Audio saved!");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream saveFile = new FileStream(Application.persistentDataPath + settingsSaveDataPath, FileMode.Create);
         bf.Serialize(saveFile, settingsData);

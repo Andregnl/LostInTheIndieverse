@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -11,12 +12,30 @@ public class VolumeSlider : MonoBehaviour
 
     private Slider slider;
 
+    private 
+
     void Awake()
     {
         slider = gameObject.GetComponent<Slider>();
         if (!slider)
         {
             Debug.LogError("Error, this object does not have a Slider component!");
+        }
+    }
+
+    private void Start()
+    {
+        switch (audioMixerParameter)
+        {
+            case "SFX":
+                slider.value = GameManager.Instance.settingsData.SFXVolume;
+                break;
+            case "music":
+                slider.value = GameManager.Instance.settingsData.musicVolume;
+                break;
+            default:
+                slider.value = GameManager.Instance.settingsData.masterVolume;
+                break;
         }
     }
 
