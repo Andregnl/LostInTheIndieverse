@@ -11,6 +11,7 @@ public class EnemyBasics : Entity
     [SerializeField] float detectionDistance = 20.0f;
     [SerializeField] LayerMask playerAndGroundLayer;
     [SerializeField] int hp = 100;
+    [SerializeField] protected Animator animator;
     protected GameObject currentTarget;
     
     public virtual void Walk() {

@@ -16,6 +16,7 @@ public class TestEnemy : EnemyBasics
 		if (currentTime > damageInterval)
 		{
 			StrikeCurrentTarget();
+			animator.SetTrigger("Attack");
 			currentTime = 0.0f;
 		}
     }
