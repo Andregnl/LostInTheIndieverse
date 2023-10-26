@@ -168,7 +168,7 @@ MonoBehaviour:
   flippableObjects: {fileID: 3537954323860607447}
   speed: 3
   damage: 1
-  damageInterval: 1.5
+  damageInterval: 10
   visionObject: {fileID: 3038298996728647976}
   detectionDistance: 3
   playerAndGroundLayer:

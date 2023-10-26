@@ -12,10 +12,19 @@ public class Projectile : MonoBehaviour
 	float maxDuration = 10.0f;
 	int damage;
 	Direction diretion;
+	bool alreadyCollided = false;
+	Queue<EnemyBasics> collidedEnemies = new Queue<EnemyBasics>();
 
 	void FixedUpdate()
 	{
 		ExecuteProjectileBehavior();
+
+		if (collidedEnemies.Count > 0)
+		{
+			EnemyBasics thatEnemy = collidedEnemies.Dequeue();
+			thatEnemy.GetComponent<Health>().TakeDamage(damage);
+			ExpireVisualSequence();
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -33,8 +42,7 @@ public class Projectile : MonoBehaviour
 		Debug.Log("Projectile hit something" + col.gameObject.name + " " + col.gameObject.tag);
 		
 
-		thatEnemy.GetComponent<Health>().TakeDamage(damage);
-		ExpireVisualSequence();
+		collidedEnemies.Enqueue(thatEnemy);
 	}
 
 	public virtual void ExpireVisualSequence()
