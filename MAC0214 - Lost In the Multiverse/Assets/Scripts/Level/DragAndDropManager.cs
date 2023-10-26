@@ -44,9 +44,6 @@ public class DragAndDropManager : MonoBehaviour
 
             if (dragAndDropItem.Drop(playerCurrency))
             {
-                playerCurrency -= dragAndDropItem.cost;
-                UpdateCurrencyLabel();
-
                 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Collider2D[] targetObjects = Physics2D.OverlapPointAll(mousePosition);
 
@@ -57,6 +54,8 @@ public class DragAndDropManager : MonoBehaviour
                         if (obj.CompareTag("Slot"))
                         {
                             obj.GetComponent<Slot>().OnDrop(dragAndDropItem);
+							playerCurrency -= dragAndDropItem.cost;
+							UpdateCurrencyLabel();
                         }
                     }
                 }
