@@ -9,9 +9,10 @@ public class DragAndDropManager : MonoBehaviour
     private Vector3 mouseOffset;
 
     public int playerCurrency = 120;
-
+    private bool canPut = true;
+    
     [SerializeField] Text currencyLabel;
-
+    [SerializeField] private MenuManager menu;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class DragAndDropManager : MonoBehaviour
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !menu.IsPaused())
         {
             Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
             if (targetObject && targetObject.CompareTag("DragDrop"))
