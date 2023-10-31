@@ -6,7 +6,22 @@ public class TestEnemy : EnemyBasics
 {
 	float currentTime = 0.0f;
 
-    void Update(){
+	[SerializeField] bool useTimeoutLife = false;
+	float timeoutLife = 0.0f;
+	float maxTimeoutLife = 3.0f;
+
+    void Update() {
+
+		// Codigo de Debug para inimigo
+		if (useTimeoutLife)
+		{
+			timeoutLife += Time.deltaTime;
+			if (timeoutLife >= maxTimeoutLife)
+			{
+				Destroy(gameObject);
+			}
+		}
+
         Walk();
         DetectTarget();
 

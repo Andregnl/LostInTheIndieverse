@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 3537954323860607447}
-  speed: 3
+  speed: 6
   damage: 1
   damageInterval: 1
   visionObject: {fileID: 3038298996728647976}
@@ -177,6 +177,7 @@ MonoBehaviour:
     m_Bits: 64
   hp: 100
   animator: {fileID: 2805603975522022886}
+  useTimeoutLife: 0
 --- !u!114 &2213213721760666326
 MonoBehaviour:
   m_ObjectHideFlags: 0
