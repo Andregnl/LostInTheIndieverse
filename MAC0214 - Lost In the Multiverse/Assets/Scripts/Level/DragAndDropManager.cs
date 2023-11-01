@@ -70,4 +70,9 @@ public class DragAndDropManager : MonoBehaviour
     {
         currencyLabel.text = "Currency: " + playerCurrency;
     }
+
+    public void UpdateCurrency(int amount){
+        playerCurrency += amount;
+        UpdateCurrencyLabel();
+    }
 }
