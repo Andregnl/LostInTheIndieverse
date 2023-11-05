@@ -6,6 +6,9 @@ public class Projectile : MonoBehaviour
 {
 	[SerializeField] GameObject flippableObjects;
 	[SerializeField] float speed;
+	[SerializeField] AudioClip collisionClip;
+
+	private AudioSource audioSource;
 
 	int row = -1;
 	float currentDuration = 0.0f;
@@ -15,6 +18,13 @@ public class Projectile : MonoBehaviour
 	bool alreadyCollided = false;
 	Queue<EnemyBasics> collidedEnemies = new Queue<EnemyBasics>();
 
+	void Awake()
+	{
+		audioSource = GameObject.
+			FindGameObjectWithTag("ProjectileAudioSource").
+			GetComponent<AudioSource>();
+	}
+
 	void FixedUpdate()
 	{
 		ExecuteProjectileBehavior();
@@ -23,6 +33,7 @@ public class Projectile : MonoBehaviour
 		{
 			EnemyBasics thatEnemy = collidedEnemies.Dequeue();
 			thatEnemy.GetComponent<Health>().TakeDamage(damage);
+			audioSource.PlayOneShot(collisionClip);
 			ExpireVisualSequence();
 		}
 	}

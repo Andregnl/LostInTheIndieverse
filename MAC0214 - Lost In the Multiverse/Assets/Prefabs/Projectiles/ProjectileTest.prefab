@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 7954681284307498919}
   speed: 4
+  collisionClip: {fileID: 8300000, guid: 0fa3f7a1ff46ce8ab8f1dd746f174ad8, type: 3}
 --- !u!61 &1211275712842575223
 BoxCollider2D:
   m_ObjectHideFlags: 0

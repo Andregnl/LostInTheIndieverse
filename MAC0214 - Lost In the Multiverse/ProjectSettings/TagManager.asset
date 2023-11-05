@@ -9,6 +9,7 @@ TagManager:
   - Slot
   - Enemy
   - Currency
+  - ProjectileAudioSource
   layers:
   - Default
   - TransparentFX

@@ -12,10 +12,12 @@ public class EnemyBasics : Entity
     [SerializeField] LayerMask playerAndGroundLayer;
     [SerializeField] int hp = 100;
     [SerializeField] protected Animator animator;
+	[SerializeField] AudioSource audioSource;
+
     protected GameObject currentTarget;
     
     public virtual void Walk() {
-        if (currentTarget != null) { Debug.Log("DEI RETURN"); return; }
+        if (currentTarget != null) { return; }
 
 		if (thisDirection == Direction.LEFT)
 			transform.Translate(new Vector2(1, 0) * speed * Time.deltaTime);
@@ -64,4 +66,8 @@ public class EnemyBasics : Entity
         }
     }
 
+	public void PlayAttackSound()
+	{
+		audioSource.Play();
+	}
 }
