@@ -11,6 +11,7 @@ public class DragAndDropManager : MonoBehaviour
     public int playerCurrency = 120;
 
     [SerializeField] Text currencyLabel;
+    [SerializeField] Transform currencyTextTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,12 @@ public class DragAndDropManager : MonoBehaviour
                 dragObject = targetObject.transform.gameObject;
                 mouseOffset = dragObject.transform.position - mousePosition;
             }
+            else if (targetObject && targetObject.CompareTag("Currency"))
+            {
+                Currency currency = targetObject.GetComponent<Currency>();
+
+                currency.PickUp(currencyTextTransform, this);
+            }
         }
 
         if (dragObject)
@@ -40,7 +47,7 @@ public class DragAndDropManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0) && dragObject)
         {
-			DragAndDropItem dragAndDropItem = (DragAndDropItem) dragObject.GetComponent(typeof(DragAndDropItem));
+            DragAndDropItem dragAndDropItem = (DragAndDropItem) dragObject.GetComponent(typeof(DragAndDropItem));
 
             if (dragAndDropItem.Drop(playerCurrency))
             {
@@ -54,8 +61,7 @@ public class DragAndDropManager : MonoBehaviour
                         if (obj.CompareTag("Slot"))
                         {
                             obj.GetComponent<Slot>().OnDrop(dragAndDropItem);
-							playerCurrency -= dragAndDropItem.cost;
-							UpdateCurrencyLabel();
+                            UpdateCurrency(-dragAndDropItem.cost);
                         }
                     }
                 }

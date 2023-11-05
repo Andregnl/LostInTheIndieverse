@@ -725,7 +725,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14.0625
+  orthographic size: 15.039753
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1369,6 +1369,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &207391303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 207391304}
+  m_Layer: 0
+  m_Name: CurrencyEndPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &207391304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207391303}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.124638, y: 20.32903, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &245636940
 GameObject:
   m_ObjectHideFlags: 0
@@ -10512,6 +10543,56 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1948388826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1948388828}
+  - component: {fileID: 1948388827}
+  m_Layer: 0
+  m_Name: CurrencySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1948388827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948388826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b97fa67b331d1dd99660c0fe0cd55ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currencyPrefab: {fileID: 2289215681963554367, guid: 4cf8832a8c447018c8777b0284efbc55, type: 3}
+  minEndPoint: {x: -21.7, y: 9.66, z: 0}
+  maxEndPoint: {x: 21.5, y: -4.14, z: 0}
+  minWaitTime: 1
+  maxWaitTime: 1
+  currencySpeed: 1.5
+--- !u!4 &1948388828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948388826}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -21.11, y: 23.81, z: -0.028686523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955784428
 GameObject:
   m_ObjectHideFlags: 0
@@ -11485,6 +11566,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 835488959834931880, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
+      propertyPath: currencyTextTransform
+      value: 
+      objectReference: {fileID: 207391304}
     - target: {fileID: 4440693582935516108, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11565,6 +11650,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4535637912061148833, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535637912061148833, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 278
+      objectReference: {fileID: 0}
     - target: {fileID: 7131935183277332051, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -11586,3 +11679,5 @@ SceneRoots:
   - {fileID: 1322384200}
   - {fileID: 7628399018496925534}
   - {fileID: 1066921582}
+  - {fileID: 207391304}
+  - {fileID: 1948388828}
