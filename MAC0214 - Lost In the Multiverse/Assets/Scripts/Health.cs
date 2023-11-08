@@ -7,6 +7,9 @@ public class Health : MonoBehaviour
 
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float health = 100f;
+	[SerializeField] private bool playDestroyedParticles;
+	[SerializeField] private GameObject bloodParticles;
+	[SerializeField] private Animator animator;
 
     public float GetCurrentHealth(){
         return health;
@@ -21,10 +24,19 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage){
         float newHealth = health - damage;
         if(newHealth <= 0) Die();
-        else health -= damage;
+        else
+		{
+			health -= damage;
+			animator.SetTrigger("TakeDamage");
+		}
     }
 
     public void Die(){
+        if (playDestroyedParticles)
+        {
+            Instantiate(bloodParticles, transform.position, transform.rotation);
+        }
+
         Object.Destroy(gameObject);
     }
 }
