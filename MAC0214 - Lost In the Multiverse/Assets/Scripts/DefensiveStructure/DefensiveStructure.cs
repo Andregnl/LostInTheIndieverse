@@ -9,6 +9,7 @@ public class DefensiveStructure : Entity
 	[SerializeField] protected GameObject projectile;
 	[SerializeField] protected float attackDelay = 2.0f;
 	[SerializeField] protected int damage = 10;
+    [SerializeField] AudioSource audioSource;
 
 	protected float currentTime = 0.0f;
 
@@ -16,6 +17,13 @@ public class DefensiveStructure : Entity
     void Update()
     {
         ExecuteDefensiveBehavior();
+    }
+
+    public void PlayShootSound()
+    {
+        if (audioSource == null) return;
+
+        audioSource.Play();
     }
 
     public virtual void ExecuteDefensiveBehavior()

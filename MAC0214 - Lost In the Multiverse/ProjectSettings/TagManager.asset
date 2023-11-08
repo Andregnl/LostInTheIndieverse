@@ -8,6 +8,8 @@ TagManager:
   - Tower
   - Slot
   - Enemy
+  - Currency
+  - ProjectileAudioSource
   layers:
   - Default
   - TransparentFX

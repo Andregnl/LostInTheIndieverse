@@ -10,4 +10,9 @@ public class TestDSAnimationEvents : MonoBehaviour
 	{
 		defensiveStructure.SpawnProjectile();
 	}
+
+	public void PlayShootSound()
+	{
+		defensiveStructure.PlayShootSound();
+	}
 }
