@@ -13,6 +13,9 @@ public class DefensiveStructure : Entity
 
 	protected float currentTime = 0.0f;
 
+    void Awake(){
+        Debug.Log("Criei um Script Structure");
+    }
     // Update is called once per frame
     void Update()
     {

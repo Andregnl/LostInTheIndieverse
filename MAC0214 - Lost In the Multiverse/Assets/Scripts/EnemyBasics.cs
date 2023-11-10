@@ -13,6 +13,7 @@ public class EnemyBasics : Entity
     [SerializeField] int hp = 100;
     [SerializeField] protected Animator animator;
 	[SerializeField] AudioSource audioSource;
+    private bool hitBase = false;
 
     protected GameObject currentTarget;
     
@@ -63,12 +64,17 @@ public class EnemyBasics : Entity
         if (health)
         {
             health.TakeDamage(damage);
-            if(currentTarget.CompareTag("Base")){
-                Object.Destroy(gameObject);
-            }
+            if (currentTarget.CompareTag("Base")) hitBase = true;
         }
     }
 
+    public virtual void IsBase()
+    {
+        if(hitBase){
+            Debug.Log("Base");
+            Object.Destroy(gameObject);
+        }
+    }
 	public void PlayAttackSound()
 	{
 		audioSource.Play();

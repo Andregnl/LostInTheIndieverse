@@ -106,9 +106,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -855961567
+  m_SortingLayer: -1
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1057548219, guid: 4307cdea4abfc24f0a2e2795e6ca6289, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -205,7 +205,7 @@ MonoBehaviour:
   flippableObjects: {fileID: 1495181622373469133}
   projectile: {fileID: 1567019949314977001, guid: 8c4090bb236b92ab38ec9f8596529b51, type: 3}
   attackDelay: 3
-  damage: 10
+  damage: 0
   audioSource: {fileID: 7513886002692388047}
   animator: {fileID: 5535443712760268328}
   spawnPoint: {fileID: 8590202365982852579}
@@ -434,9 +434,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -855961567
+  m_SortingLayer: -1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1146461150, guid: 7d3dbbafa7bd0cc5b9a80217518ddb81, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

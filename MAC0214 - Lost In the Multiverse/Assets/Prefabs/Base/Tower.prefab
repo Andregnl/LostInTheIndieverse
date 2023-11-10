@@ -43,7 +43,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1338889808896307505}
   - component: {fileID: 3455951136228049699}
-  - component: {fileID: 5535443712760268328}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -119,27 +118,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5535443712760268328
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3400100857732972220}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6112e5706f370c70fb2f430154efa7ed, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7642965045787027164
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,11 +127,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234089016547257935}
-  - component: {fileID: 382364136086667860}
   - component: {fileID: 6513591173126174194}
   - component: {fileID: 2253677243456983259}
   - component: {fileID: 7513886002692388047}
-  - component: {fileID: 5744487751308252089}
+  - component: {fileID: 7642692263982486539}
   m_Layer: 6
   m_Name: Tower
   m_TagString: Base
@@ -177,25 +154,6 @@ Transform:
   - {fileID: 8217435670166460163}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &382364136086667860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642965045787027164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381502c997a5071ceb2bc001027aeb4a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippableObjects: {fileID: 1495181622373469133}
-  projectile: {fileID: 1567019949314977001, guid: 8c4090bb236b92ab38ec9f8596529b51, type: 3}
-  attackDelay: 3
-  damage: 10
-  audioSource: {fileID: 7513886002692388047}
-  animator: {fileID: 5535443712760268328}
-  spawnPoint: {fileID: 8590202365982852579}
 --- !u!61 &6513591173126174194
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -253,8 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454af217423ada84783ecd6a55d3ab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
-  health: 2
+  maxHealth: 100
+  health: 100
 --- !u!82 &7513886002692388047
 AudioSource:
   m_ObjectHideFlags: 0
@@ -351,7 +309,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5744487751308252089
+--- !u!114 &7642692263982486539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,9 +318,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7642965045787027164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32b2e7328b3b8104881c054fcc9b1e1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ef47b9f5617b3754bfe761bf89d9594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flippableObjects: {fileID: 1495181622373469133}
+  projectile: {fileID: 0}
+  attackDelay: 2
+  damage: 10
+  audioSource: {fileID: 0}
 --- !u!1 &8343235703638697852
 GameObject:
   m_ObjectHideFlags: 0
