@@ -39,7 +39,7 @@ public class EnemyBasics : Entity
 
         if (hit.collider != null)
         {
-            if (hit.collider.CompareTag("Tower"))
+            if (hit.collider.CompareTag("Tower") || hit.collider.CompareTag("Base"))
             {
                             //Debug.Log("Tower");
                 currentTarget = hit.collider.gameObject;
@@ -63,6 +63,9 @@ public class EnemyBasics : Entity
         if (health)
         {
             health.TakeDamage(damage);
+            if(currentTarget.CompareTag("Base")){
+                Object.Destroy(gameObject);
+            }
         }
     }
 

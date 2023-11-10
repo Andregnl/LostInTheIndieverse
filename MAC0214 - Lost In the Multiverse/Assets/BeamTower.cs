@@ -22,7 +22,7 @@ public class BeamTower : DefensiveStructure
 		if (currentTime >= attackDelay)
 		{
 			currentTime = 0.0f;
-			animator.SetTrigger("Attack");
+			animator.SetTrigger("attack");
 		}
 	}
 

@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Currency
   - ProjectileAudioSource
+  - Base
   layers:
   - Default
   - TransparentFX
