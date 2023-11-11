@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplosiveTowerHealth : Health
 {
-    [SerializeField] ExplosiveTower exp;
+    [SerializeField] ExplosiveTowerEvents exp;
     public override void TakeDamage(float damage){
         exp.Explode();
     }

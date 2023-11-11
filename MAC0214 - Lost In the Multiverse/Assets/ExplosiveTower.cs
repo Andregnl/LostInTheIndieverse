@@ -9,10 +9,14 @@ public class ExplosiveTower : DefensiveStructure
 
     public void Explode()
     {
-		GameObject proj = Instantiate(projectile,
-									  spawnPoint.position,
-									  Quaternion.identity,
-									  gameObject.transform);
+        animator.SetTrigger("attack");
+		GameObject proj = Instantiate(projectile, spawnPoint.position, Quaternion.identity);
+		proj.transform.SetParent(gameObject.transform.parent);
 		//Destroy(gameObject);
     }
+
+	public void ExpireVisual()
+	{
+		Destroy(gameObject);
+	}
 }
