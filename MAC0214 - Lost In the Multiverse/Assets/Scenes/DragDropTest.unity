@@ -8477,7 +8477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 1
-  prefabToInstantiate: {fileID: 7642965045787027164, guid: c76077eb2f6fa8b4592a79e4a2955332, type: 3}
+  prefabToInstantiate: {fileID: 7642965045787027164, guid: b254af1a6ae45524383806d06eb010ba, type: 3}
 --- !u!58 &1622681652
 CircleCollider2D:
   m_ObjectHideFlags: 0
