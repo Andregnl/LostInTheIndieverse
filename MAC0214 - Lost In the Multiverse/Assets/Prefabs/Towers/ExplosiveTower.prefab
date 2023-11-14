@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 6513591173126174194}
   - component: {fileID: 7513886002692388047}
   m_Layer: 6
-  m_Name: Tower 3
+  m_Name: ExplosiveTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

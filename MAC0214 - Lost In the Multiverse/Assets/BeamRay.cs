@@ -10,6 +10,7 @@ public class BeamRay : MonoBehaviour
 
 	int row = -1;
 	float currentDuration = 0.0f;
+	[SerializeField] float damageInterval;
 	[SerializeField] float maxDuration = 10.0f;
 	int damage;
 	Direction diretion;
@@ -28,9 +29,12 @@ public class BeamRay : MonoBehaviour
 
 	}
 
+	private float currentTime = 100.0f;
 	void OnTriggerStay2D(Collider2D col)
 	{
 		if (!col.CompareTag("Enemy")) return;
+
+		currentTime += Time.deltaTime;
 
 		EnemyBasics thatEnemy = col.GetComponent<EnemyBasics>();
 		if (thatEnemy == null)
@@ -42,8 +46,12 @@ public class BeamRay : MonoBehaviour
 		if (thatEnemy.GetRow() != row) return;
 		Debug.Log("Projectile hit something" + col.gameObject.name + " " + col.gameObject.tag);
 		
-        thatEnemy.GetComponent<Health>().TakeDamage(damage);
-        audioSource.PlayOneShot(collisionClip);
+		if(currentTime >= damageInterval)
+		{
+        	thatEnemy.GetComponent<Health>().TakeDamage(damage);
+        	audioSource.PlayOneShot(collisionClip);
+			currentTime = 0.0f;
+		}
 	}
 
 	public virtual void ExpireVisualSequence()
