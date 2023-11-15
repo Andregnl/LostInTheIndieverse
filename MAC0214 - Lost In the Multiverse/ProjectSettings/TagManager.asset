@@ -51,3 +51,6 @@ TagManager:
   - name: Tower
     uniqueID: 3439005729
     locked: 0
+  - name: Slot
+    uniqueID: 2736820617
+    locked: 0
