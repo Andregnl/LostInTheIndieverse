@@ -31,6 +31,7 @@ Transform:
   m_Children:
   - {fileID: 1338889808896307505}
   - {fileID: 8590202365982852579}
+  - {fileID: 3376559440278090634}
   m_Father: {fileID: 234089016547257935}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3400100857732972220
@@ -154,6 +155,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &5191218350074066206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3376559440278090634}
+  m_Layer: 6
+  m_Name: SpawnPointOrigin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3376559440278090634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5191218350074066206}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.12, y: 2.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8217435670166460163}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7642965045787027164
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +394,13 @@ MonoBehaviour:
   projectile: {fileID: 1567019949314977001, guid: 876ce2d3e5e1b1e4980b5721825f1f1f, type: 3}
   attackDelay: 8
   damage: 1
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 7513886002692388047}
+  detectionDistance: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  visionObject: {fileID: 8668827536398961990}
+  visionVectorOrigin: {fileID: 5191218350074066206}
   animator: {fileID: 4519596212436413930}
   spawnPoint: {fileID: 8590202365982852579}
   beamRay: {fileID: -1886578645559490105}

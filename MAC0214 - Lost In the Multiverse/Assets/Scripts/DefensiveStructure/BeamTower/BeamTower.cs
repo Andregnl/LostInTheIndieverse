@@ -17,6 +17,8 @@ public class BeamTower : DefensiveStructure
     }
     public override void ExecuteDefensiveBehavior()
     {
+		if (!DetectEnemiesInRow()) return;
+
 		currentTime += Time.deltaTime;
 
 		if (currentTime >= attackDelay)

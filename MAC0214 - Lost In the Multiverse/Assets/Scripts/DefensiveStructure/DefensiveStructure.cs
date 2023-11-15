@@ -10,6 +10,10 @@ public class DefensiveStructure : Entity
 	[SerializeField] protected float attackDelay = 2.0f;
 	[SerializeField] protected int damage = 10;
     [SerializeField] AudioSource audioSource;
+	[SerializeField] float detectionDistance = 0.0f;
+	[SerializeField] LayerMask enemyLayer;
+	[SerializeField] GameObject visionObject;
+	[SerializeField] GameObject visionVectorOrigin;
 
 	protected float currentTime = 0.0f;
 
@@ -28,6 +32,30 @@ public class DefensiveStructure : Entity
 
         audioSource.Play();
     }
+
+	public bool DetectEnemiesInRow()
+	{
+		RaycastHit2D hit = Physics2D.Raycast(visionVectorOrigin.transform.position,
+                                             Vector3.Normalize(visionObject.transform.position -
+															   visionVectorOrigin.transform.position),
+                                             detectionDistance,
+                                             enemyLayer);
+        Debug.DrawRay(visionVectorOrigin.transform.position,
+					  Vector3.Normalize(visionObject.transform.position -
+										visionVectorOrigin.transform.position) *
+					  detectionDistance,
+					  Color.green);
+
+        if (hit.collider != null)
+        {
+            if (hit.collider.CompareTag("Enemy"))
+            {
+                return true;
+            }
+        }
+
+		return false;
+	}
 
     public virtual void ExecuteDefensiveBehavior()
     {
