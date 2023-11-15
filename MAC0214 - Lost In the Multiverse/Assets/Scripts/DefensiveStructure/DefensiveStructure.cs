@@ -14,10 +14,14 @@ public class DefensiveStructure : Entity
 	[SerializeField] LayerMask enemyLayer;
 	[SerializeField] GameObject visionObject;
 	[SerializeField] GameObject visionVectorOrigin;
+	[SerializeField] bool shootOnStart = true;
 
 	protected float currentTime = 0.0f;
 
     void Awake(){
+        if(shootOnStart)
+            currentTime += attackDelay;
+
         Debug.Log("Criei um Script Structure");
     }
     // Update is called once per frame

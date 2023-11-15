@@ -208,7 +208,7 @@ MonoBehaviour:
   attackDelay: 3
   damage: 10
   audioSource: {fileID: 7513886002692388047}
-  detectionDistance: 10
+  detectionDistance: 16
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
