@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionClip: {fileID: 0}
-  damageInterval: 0.2
+  damageInterval: 0.15
   maxDuration: 10
   beamRay: {fileID: 3187543993627450589}
   collision: {fileID: 1211275712842575223}

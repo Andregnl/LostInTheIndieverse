@@ -248,8 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454af217423ada84783ecd6a55d3ab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 7
-  health: 7
+  maxHealth: 6
+  health: 6
 --- !u!82 &7513886002692388047
 AudioSource:
   m_ObjectHideFlags: 0
@@ -360,8 +360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 1495181622373469133}
   projectile: {fileID: 1567019949314977001, guid: 876ce2d3e5e1b1e4980b5721825f1f1f, type: 3}
-  attackDelay: 5
-  damage: 2
+  attackDelay: 4
+  damage: 1
   audioSource: {fileID: 0}
   animator: {fileID: 4519596212436413930}
   spawnPoint: {fileID: 8590202365982852579}
