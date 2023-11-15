@@ -5,8 +5,8 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
 
-    [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private float health = 100f;
+    [SerializeField] protected float maxHealth = 100f;
+    [SerializeField] protected float health = 100f;
 
     public float GetCurrentHealth(){
         return health;
@@ -18,13 +18,13 @@ public class Health : MonoBehaviour
         else health += healing;
     }
 
-    public void TakeDamage(float damage){
+    public virtual void TakeDamage(float damage){
         float newHealth = health - damage;
         if(newHealth <= 0) Die();
         else health -= damage;
     }
 
-    public void Die(){
+    public virtual void Die(){
         Object.Destroy(gameObject);
     }
 }

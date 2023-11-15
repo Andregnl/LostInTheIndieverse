@@ -6018,7 +6018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ab844b57264a44a8b24260160b6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 1
   prefabToInstantiate: {fileID: 7642965045787027164, guid: 02e329de529226297a9df897bc56a34e, type: 3}
 --- !u!1 &1037997086
 GameObject:
@@ -7433,28 +7433,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: TestWave
-    enemy:
-    - {fileID: 1785577725898590725, guid: 1f63517044c1d5d4585e8041670eb531, type: 3}
-    count: 03000000
+    enemy: {fileID: 1785577725898590725, guid: 1f63517044c1d5d4585e8041670eb531, type: 3}
+    count: 10
     rate: 1
-    randSpawn: 0
-  - name: TestWave
-    enemy:
-    - {fileID: 1785577725898590725, guid: 1e5d941b2a6798e4684d30c2cff380c3, type: 3}
-    - {fileID: 1785577725898590725, guid: 1f63517044c1d5d4585e8041670eb531, type: 3}
-    count: 0100000003000000
-    rate: 1
-    randSpawn: 0
-  - name: TestWave
-    enemy:
-    - {fileID: 1785577725898590725, guid: 2a1fea04f5ff80649919877ac7c09c2b, type: 3}
-    count: 03000000
-    rate: 2
-    randSpawn: 1
   spawnPoints:
   - {fileID: 455204256}
-  - {fileID: 817117366}
-  - {fileID: 1846552969}
+  - {fileID: 1498378643}
   timeBetweenWaves: 2
 --- !u!4 &1322384200
 Transform:
@@ -8207,7 +8191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ab844b57264a44a8b24260160b6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 120
+  cost: 1
   prefabToInstantiate: {fileID: 7642965045787027164, guid: 06a691ac977072f4db33cb41551c7367, type: 3}
 --- !u!58 &1558811579
 CircleCollider2D:
@@ -8492,7 +8476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ab844b57264a44a8b24260160b6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 150
+  cost: 1
   prefabToInstantiate: {fileID: 7642965045787027164, guid: b254af1a6ae45524383806d06eb010ba, type: 3}
 --- !u!58 &1622681652
 CircleCollider2D:
@@ -9031,6 +9015,58 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1735463057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1735463059}
+  - component: {fileID: 1735463058}
+  m_Layer: 0
+  m_Name: Spawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1735463058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735463057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4068cdf704984c48abcb67afd338349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - name: TestWave
+    enemy: {fileID: 1785577725898590725, guid: 1e5d941b2a6798e4684d30c2cff380c3, type: 3}
+    count: 1
+    rate: 1
+  spawnPoints:
+  - {fileID: 1132619598}
+  timeBetweenWaves: 2
+--- !u!4 &1735463059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735463057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9, y: 4.9741106, z: -0.26669237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1760261917
 GameObject:
   m_ObjectHideFlags: 0
@@ -10933,7 +10969,7 @@ MonoBehaviour:
   minEndPoint: {x: -21.7, y: 9.66, z: 0}
   maxEndPoint: {x: 21.5, y: -4.14, z: 0}
   minWaitTime: 0
-  maxWaitTime: 7
+  maxWaitTime: 10
   currencySpeed: 1.5
 --- !u!4 &1948388828
 Transform:
@@ -12052,10 +12088,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 835488959834931880, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
-      propertyPath: playerCurrency
-      value: 9999
-      objectReference: {fileID: 0}
-    - target: {fileID: 835488959834931880, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
       propertyPath: currencyTextTransform
       value: 
       objectReference: {fileID: 207391304}
@@ -12141,11 +12173,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4535637912061148833, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 694
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 4535637912061148833, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 481
+      value: 278
       objectReference: {fileID: 0}
     - target: {fileID: 7131935183277332051, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
       propertyPath: m_Name
@@ -12166,6 +12198,7 @@ SceneRoots:
   - {fileID: 1290863207}
   - {fileID: 2043761291}
   - {fileID: 1322384200}
+  - {fileID: 1735463059}
   - {fileID: 7628399018496925534}
   - {fileID: 1066921582}
   - {fileID: 207391304}
