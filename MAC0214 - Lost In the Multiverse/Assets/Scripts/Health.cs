@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
         else health += healing;
     }
 
-    public void TakeDamage(float damage){
+    public virtual void TakeDamage(float damage){
         float newHealth = health - damage;
         if(newHealth <= 0) Die();
         else
@@ -36,7 +36,7 @@ public class Health : MonoBehaviour
 		}
     }
 
-    public void Die(){
+    public virtual void Die(){
 
 		if (healthbar != null)
 			healthbar.fillAmount = 0;

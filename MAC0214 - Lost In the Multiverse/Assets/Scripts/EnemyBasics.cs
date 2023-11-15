@@ -10,7 +10,6 @@ public class EnemyBasics : Entity
     [SerializeField] Transform visionObject;
     [SerializeField] float detectionDistance = 20.0f;
     [SerializeField] LayerMask playerAndGroundLayer;
-    [SerializeField] int hp = 100;
     [SerializeField] protected Animator animator;
 	[SerializeField] AudioSource audioSource;
     private bool hitBase = false;
@@ -31,6 +30,10 @@ public class EnemyBasics : Entity
         speed = newspeed;
     }
 
+    public void SetDamageInterval(float inteval)
+    {
+        damageInterval = inteval;
+    }
     public virtual void DetectTarget(){
         RaycastHit2D hit = Physics2D.Raycast(transform.position,
                                              Vector3.Normalize(visionObject.transform.position - transform.position),

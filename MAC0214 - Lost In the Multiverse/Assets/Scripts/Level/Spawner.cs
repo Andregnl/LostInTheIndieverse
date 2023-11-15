@@ -3,15 +3,16 @@ using System.Collections;
 
 public class WaveSpawner : MonoBehaviour {
 
-	public enum SpawnState { SPAWNING, WAITING, COUNTING };
+	public enum SpawnState { SPAWNING, WAITING, COUNTING , FINISHING};
 
 	[System.Serializable]
 	public class Wave
 	{
 		public string name;
-		public Transform enemy;
-		public int count;
+		public Transform[] enemy;
+		public int[] count;
 		public float rate;
+		public bool randSpawn;
 	}
 
 	public Wave[] waves;
@@ -64,7 +65,7 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (waveCountdown <= 0)
 		{
-			if (state != SpawnState.SPAWNING)
+			if (state != SpawnState.SPAWNING && state != SpawnState.FINISHING)
 			{
 				StartCoroutine( SpawnWave ( waves[nextWave] ) );
 			}
@@ -84,8 +85,9 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (nextWave + 1 > waves.Length - 1)
 		{
-			nextWave = 0;
+			//nextWave = 0;
 			Debug.Log("ALL WAVES COMPLETE! Looping...");
+			state = SpawnState.FINISHING;
 		}
 		else
 		{
@@ -112,10 +114,13 @@ public class WaveSpawner : MonoBehaviour {
 		Debug.Log("Spawning Wave: " + _wave.name);
 		state = SpawnState.SPAWNING;
 
-		for (int i = 0; i < _wave.count; i++)
+		for (int i = 0; i < _wave.enemy.Length; i++)
 		{
-			SpawnEnemy(_wave.enemy);
-			yield return new WaitForSeconds( 1f/_wave.rate );
+			for (int j = 0; j < _wave.count[i]; j++)
+			{
+				SpawnEnemy(_wave.enemy[i], nextWave, _wave.randSpawn);
+				yield return new WaitForSeconds( 1f/_wave.rate );
+			}
 		}
 
 		state = SpawnState.WAITING;
@@ -123,14 +128,22 @@ public class WaveSpawner : MonoBehaviour {
 		yield break;
 	}
 
-	void SpawnEnemy(Transform _enemy)
+	void SpawnEnemy(Transform _enemy, int spawnIndex, bool rand = false)
 	{
 		//Debug.Log("Spawning Enemy: " + _enemy.name);
-
-		Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
-		Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
-		enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
-		enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());
+		if(rand)
+		{
+			Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
+			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
+			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());
+		}
+		else{
+			Transform _sp = spawnPoints[ spawnIndex ];
+			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
+			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());			
+		}
 	}
 
 }
