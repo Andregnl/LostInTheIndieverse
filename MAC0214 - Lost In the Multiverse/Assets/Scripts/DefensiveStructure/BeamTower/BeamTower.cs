@@ -9,14 +9,11 @@ public class BeamTower : DefensiveStructure
     [SerializeField] LineRenderer beamRay;
     [SerializeField] float distance;
     private BeamRay projectileScript;
-    [SerializeField] private bool shootOnStart = false;
-    void Awake()
+
+	public override void ExecuteDefensiveBehavior()
     {
-        if(shootOnStart)
-            currentTime += attackDelay;
-    }
-    public override void ExecuteDefensiveBehavior()
-    {
+		if (!DetectEnemiesInRow()) return;
+
 		currentTime += Time.deltaTime;
 
 		if (currentTime >= attackDelay)
