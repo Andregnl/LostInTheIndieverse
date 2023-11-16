@@ -67,7 +67,9 @@ public class WaveSpawner : MonoBehaviour {
 		{
 			if (state != SpawnState.SPAWNING && state != SpawnState.FINISHING)
 			{
-				StartCoroutine( SpawnWave ( waves[nextWave] ) );
+				if (nextWave < waves.Length) {
+					StartCoroutine(SpawnWave(waves[nextWave]));
+				}
 			}
 		}
 		else
