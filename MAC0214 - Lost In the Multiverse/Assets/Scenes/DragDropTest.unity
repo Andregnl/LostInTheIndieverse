@@ -800,7 +800,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 15.662374
+  orthographic size: 14.0625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4413,6 +4413,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &707647904 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2532344739806993493, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
+  m_PrefabInstance: {fileID: 6385847336945401493}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &729727990
 GameObject:
   m_ObjectHideFlags: 0
@@ -7679,8 +7684,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: TestWave
-    enemy: {fileID: 1785577725898590725, guid: 1f63517044c1d5d4585e8041670eb531, type: 3}
-    count: 4
+    enemy:
+    - {fileID: 1785577725898590725, guid: 1e5d941b2a6798e4684d30c2cff380c3, type: 3}
+    count: 01000000
     rate: 1
     randSpawn: 0
   - name: TestWave
@@ -18065,6 +18071,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8267747078143311577, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
+      propertyPath: healthAnimator
+      value: 
+      objectReference: {fileID: 707647904}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

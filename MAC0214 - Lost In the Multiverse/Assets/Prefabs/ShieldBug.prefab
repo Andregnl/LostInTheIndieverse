@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6344140354814072319}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flippable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2527152507373786948}
   - component: {fileID: 6938879924075063975}
-  - component: {fileID: 8009857268210029735}
   - component: {fileID: 8388555346885994695}
-  m_Layer: 0
+  - component: {fileID: 617574146852141036}
+  m_Layer: 7
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8009857268210029735
+--- !u!114 &8388555346885994695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024065518052939313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185e6f8161b62af44a6522413e2fc1b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bug: {fileID: 5992255051056323837}
+  noShieldInterval: 1
+--- !u!95 &617574146852141036
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -141,20 +155,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8388555346885994695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4024065518052939313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185e6f8161b62af44a6522413e2fc1b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bug: {fileID: 5992255051056323837}
-  noShieldInterval: 1
 --- !u!1 &5061650234583757675
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2195172696797719027}
   - component: {fileID: 6849766406657874592}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 5971630274274588069}
   - component: {fileID: 6937687910078865803}
   - component: {fileID: 7522796156232613873}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShieldBug
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -482,8 +482,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   health: 10
+  healthAnimator: {fileID: 617574146852141036}
+  healthbar: {fileID: 0}
   shieldHits: 1
-  animator: {fileID: 8009857268210029735}
 --- !u!95 &7522796156232613873
 Animator:
   serializedVersion: 5
@@ -516,7 +517,7 @@ GameObject:
   - component: {fileID: 3038298996728647976}
   - component: {fileID: 615998967436769121}
   - component: {fileID: 3808016719296669216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
