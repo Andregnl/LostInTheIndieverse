@@ -480,8 +480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dc41676047f3ff48a808952941f799e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  health: 10
+  maxHealth: 4
+  health: 4
   healthAnimator: {fileID: 617574146852141036}
   healthbar: {fileID: 0}
   shieldHits: 1

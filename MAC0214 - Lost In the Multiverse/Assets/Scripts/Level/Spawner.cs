@@ -25,6 +25,7 @@ public class WaveSpawner : MonoBehaviour {
 	public Transform[] spawnPoints;
 
 	public float timeBetweenWaves = 5f;
+	public bool loop;
 	private float waveCountdown;
 	public float WaveCountdown
 	{
@@ -65,7 +66,7 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (waveCountdown <= 0)
 		{
-			if (state != SpawnState.SPAWNING && state != SpawnState.FINISHING)
+			if ((state != SpawnState.SPAWNING && state != SpawnState.FINISHING) || loop)
 			{
 				StartCoroutine( SpawnWave ( waves[nextWave] ) );
 			}
@@ -139,6 +140,7 @@ public class WaveSpawner : MonoBehaviour {
 			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());
 		}
 		else{
+			if(spawnIndex == null) spawnIndex = 0;
 			Transform _sp = spawnPoints[ spawnIndex ];
 			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
 			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());

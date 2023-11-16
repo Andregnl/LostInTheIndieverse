@@ -176,7 +176,6 @@ MonoBehaviour:
   playerAndGroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  hp: 100
   animator: {fileID: 2805603975522022886}
   audioSource: {fileID: 5971630274274588069}
 --- !u!114 &2213213721760666326
@@ -191,8 +190,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454af217423ada84783ecd6a55d3ab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  health: 10
+  maxHealth: 4
+  health: 4
+  healthAnimator: {fileID: 0}
+  healthbar: {fileID: 0}
 --- !u!61 &208339461586565120
 BoxCollider2D:
   m_ObjectHideFlags: 0

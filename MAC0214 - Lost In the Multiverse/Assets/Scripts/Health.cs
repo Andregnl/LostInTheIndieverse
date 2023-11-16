@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
 
-    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] protected float maxHealth = 100f;
     [SerializeField] protected float health = 100f;
 	[SerializeField] protected Animator healthAnimator;
 	[SerializeField] Image healthbar;
