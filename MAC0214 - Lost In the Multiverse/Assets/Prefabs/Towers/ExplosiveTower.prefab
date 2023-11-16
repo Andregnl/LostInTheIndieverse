@@ -109,7 +109,7 @@ SpriteRenderer:
   m_SortingLayerID: -855961567
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1057548219, guid: 4307cdea4abfc24f0a2e2795e6ca6289, type: 3}
+  m_Sprite: {fileID: -1421683032, guid: 4307cdea4abfc24f0a2e2795e6ca6289, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,8 +205,15 @@ MonoBehaviour:
   flippableObjects: {fileID: 1495181622373469133}
   projectile: {fileID: 1567019949314977001, guid: 5cfa28df0e45c814ca4cfaad880834b7, type: 3}
   attackDelay: 20
-  damage: 1000
+  damage: 10
   audioSource: {fileID: 7513886002692388047}
+  detectionDistance: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  visionObject: {fileID: 0}
+  visionVectorOrigin: {fileID: 0}
+  shootOnStart: 1
   animator: {fileID: 2895598260650209212}
   spawnPoint: {fileID: 8590202365982852579}
 --- !u!114 &5530650511363372473
@@ -223,6 +230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 100
+  healthAnimator: {fileID: 0}
+  healthbar: {fileID: 0}
   exp: {fileID: 2893904967215277505}
 --- !u!61 &6513591173126174194
 BoxCollider2D:
@@ -391,8 +400,8 @@ Transform:
   m_GameObject: {fileID: 8343235703638697852}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.069, z: 0}
-  m_LocalScale: {x: 1.6806, y: 1.6806, z: 1.6806}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
+  m_LocalScale: {x: 0.55165696, y: 0.55165696, z: 0.55165696}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1338889808896307505}
@@ -437,8 +446,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -855961567
   m_SortingLayer: 1
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 1146461150, guid: 7d3dbbafa7bd0cc5b9a80217518ddb81, type: 3}
+  m_SortingOrder: 30
+  m_Sprite: {fileID: 961445837, guid: 415093eebb58b6745b2b583d8c101fb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -66,7 +66,7 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (waveCountdown <= 0)
 		{
-			if ((state != SpawnState.SPAWNING && state != SpawnState.FINISHING) || loop)
+			if ((state != SpawnState.SPAWNING && state != SpawnState.FINISHING))
 			{
 				StartCoroutine( SpawnWave ( waves[nextWave] ) );
 			}
@@ -86,9 +86,12 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (nextWave + 1 > waves.Length - 1)
 		{
-			//nextWave = 0;
-			Debug.Log("ALL WAVES COMPLETE! Looping...");
-			state = SpawnState.FINISHING;
+			if(loop){
+				nextWave = 0;
+			}
+			else{
+							state = SpawnState.FINISHING;
+			}
 		}
 		else
 		{
