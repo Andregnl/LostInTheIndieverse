@@ -7,8 +7,8 @@ public class Health : MonoBehaviour
 {
 
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private float health = 100f;
-	[SerializeField] Animator animator;
+    [SerializeField] protected float health = 100f;
+	[SerializeField] protected Animator healthAnimator;
 	[SerializeField] Image healthbar;
 
     public float GetCurrentHealth(){
@@ -31,8 +31,8 @@ public class Health : MonoBehaviour
 			if (healthbar != null)
 				healthbar.fillAmount = health / maxHealth;
 
-			if (animator != null)
-				animator.SetTrigger("TakeDamage");
+			if (healthAnimator != null)
+				healthAnimator.SetTrigger("TakeDamage");
 		}
     }
 
