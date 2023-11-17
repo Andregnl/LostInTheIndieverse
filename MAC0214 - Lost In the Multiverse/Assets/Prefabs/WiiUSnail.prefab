@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6344140354814072319}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Flippable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2195172696797719027}
   - component: {fileID: 6849766406657874592}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,8 +59,8 @@ Transform:
   m_GameObject: {fileID: 5061650234583757675}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 1.06, z: 0}
-  m_LocalScale: {x: 8.687878, y: 8.687878, z: 0.8687878}
+  m_LocalPosition: {x: -0.34, y: 0.83, z: 0}
+  m_LocalScale: {x: 7.2575703, y: 7.2575703, z: 0.72575706}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6344140354814072319}
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 137078067, guid: 656cf24f2de0ba84eb463eaa5cf1c943, type: 3}
+  m_Sprite: {fileID: 1260186916, guid: e1583dab058582d49acd007c36dc6374, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,15 +126,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1785577725898590725}
-  - component: {fileID: 1668452094729313410}
-  - component: {fileID: 2213213721760666326}
+  - component: {fileID: 5869831756670311362}
+  - component: {fileID: 7559707579214702637}
   - component: {fileID: 208339461586565120}
   - component: {fileID: 5632465619761315865}
   - component: {fileID: 5971630274274588069}
-  - component: {fileID: 7927524500417894915}
-  - component: {fileID: 6335989966697917155}
-  m_Layer: 0
-  m_Name: Slime
+  - component: {fileID: 8098511147125711212}
+  - component: {fileID: 7509106000010749128}
+  m_Layer: 7
+  m_Name: WiiUSnail
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +156,7 @@ Transform:
   - {fileID: 6344140354814072319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1668452094729313410
+--- !u!114 &5869831756670311362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,21 +165,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 5513242566402869192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5928ca580eda20d4ab0abd875e6db835, type: 3}
+  m_Script: {fileID: 11500000, guid: 3e369f7474849434ba06db54f1b5c3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 3537954323860607447}
-  speed: 5
-  damage: 4
-  damageInterval: 0
+  speed: 1
+  damage: 3
+  damageInterval: 3
   visionObject: {fileID: 3038298996728647976}
-  detectionDistance: 3
+  detectionDistance: 2
   playerAndGroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  animator: {fileID: 7927524500417894915}
-  audioSource: {fileID: 5971630274274588069}
---- !u!114 &2213213721760666326
+  animator: {fileID: 8098511147125711212}
+  audioSource: {fileID: 0}
+  snail: {fileID: 7559707579214702637}
+--- !u!114 &7559707579214702637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,11 +189,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5513242566402869192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454af217423ada84783ecd6a55d3ab90, type: 3}
+  m_Script: {fileID: 11500000, guid: 117883bc293d4a4468d21f38f5b179b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  health: 3
+  maxHealth: 6
+  health: 6
+  healthAnimator: {fileID: 8098511147125711212}
+  sp: {fileID: 6849766406657874592}
+  healthbar: {fileID: 0}
+  _flash: {fileID: 0}
+  shellLife: 2
 --- !u!61 &208339461586565120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -229,8 +235,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.38, y: 0.24}
+    newSize: {x: 0.38, y: 0.24}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -361,7 +367,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &7927524500417894915
+--- !u!95 &8098511147125711212
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -371,7 +377,7 @@ Animator:
   m_GameObject: {fileID: 5513242566402869192}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19f5eba4540da9a4da6126e6585aa358, type: 2}
+  m_Controller: {fileID: 9100000, guid: 38eca6e3c9e71d645802dd5958adb824, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -382,7 +388,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!212 &6335989966697917155
+--- !u!212 &7509106000010749128
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -423,12 +429,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 137078067, guid: 656cf24f2de0ba84eb463eaa5cf1c943, type: 3}
+  m_Sprite: {fileID: 42024170, guid: 1cf9806dfeb733e44b763b398a7ac283, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.38, y: 0.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -444,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3038298996728647976}
   - component: {fileID: 615998967436769121}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}

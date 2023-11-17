@@ -4718,6 +4718,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &778047525 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9121444906371698373, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
+  m_PrefabInstance: {fileID: 6385847336945401493}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &778153904
 GameObject:
   m_ObjectHideFlags: 0
@@ -7821,8 +7826,8 @@ MonoBehaviour:
   waves:
   - name: TestWave
     enemy:
-    - {fileID: 1785577725898590725, guid: 1f63517044c1d5d4585e8041670eb531, type: 3}
-    count: 03000000
+    - {fileID: 1785577725898590725, guid: 4c2bdd220f5e036469d5811aa659e488, type: 3}
+    count: 01000000
     rate: 1
     randSpawn: 0
   - name: TestWave
@@ -7849,6 +7854,7 @@ MonoBehaviour:
   - {fileID: 817117366}
   - {fileID: 1846552969}
   timeBetweenWaves: 2
+  loop: 0
 --- !u!4 &1322384200
 Transform:
   m_ObjectHideFlags: 0
@@ -18201,6 +18207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8267747078143311577, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
+      propertyPath: sp
+      value: 
+      objectReference: {fileID: 778047525}
     - target: {fileID: 8267747078143311577, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
       propertyPath: health
       value: 10

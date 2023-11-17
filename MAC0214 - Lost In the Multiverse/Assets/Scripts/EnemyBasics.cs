@@ -34,6 +34,10 @@ public class EnemyBasics : Entity
     {
         damageInterval = inteval;
     }
+    public void SetDamage(float dg)
+    {
+        damage = dg;
+    }
     public virtual void DetectTarget(){
         RaycastHit2D hit = Physics2D.Raycast(transform.position,
                                              Vector3.Normalize(visionObject.transform.position - transform.position),
