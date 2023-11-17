@@ -7,7 +7,9 @@ public class Projectile : MonoBehaviour
 	[SerializeField] GameObject flippableObjects;
 	[SerializeField] float speed;
 	[SerializeField] AudioClip collisionClip;
-
+    [SerializeField] protected Material _flash;
+    [SerializeField] protected SpriteRenderer sp;
+    private Material originalMaterial;
 	private AudioSource audioSource;
 
 	int row = -1;
@@ -58,7 +60,7 @@ public class Projectile : MonoBehaviour
 
 	public virtual void ExpireVisualSequence()
 	{
-		Destroy(gameObject);
+		StartCoroutine(PlayTakeDamage());
 	}
 
 	public virtual void ExecuteProjectileBehavior()
@@ -90,4 +92,21 @@ public class Projectile : MonoBehaviour
 			this.diretion = Direction.RIGHT;
 		}
 	}
+
+	public IEnumerator PlayTakeDamage()
+    {
+        if(sp != null)
+            sp.material = _flash;
+        float interval = 0.1f;
+
+        yield return new WaitForSeconds(interval / 2);
+        
+        if(sp != null)
+            sp.material = originalMaterial;
+		
+		Destroy(gameObject);
+
+        yield break;
+    }
+	
 }
