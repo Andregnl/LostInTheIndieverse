@@ -231,7 +231,9 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   healthAnimator: {fileID: 0}
+  sp: {fileID: 3455951136228049699}
   healthbar: {fileID: 0}
+  _flash: {fileID: 2100000, guid: 9c94d15a1338e304d8b3246c7ae7eb86, type: 2}
   exp: {fileID: 2893904967215277505}
 --- !u!61 &6513591173126174194
 BoxCollider2D:

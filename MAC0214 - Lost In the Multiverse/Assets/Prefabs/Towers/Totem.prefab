@@ -1019,8 +1019,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 1495181622373469133}
   projectile: {fileID: 0}
-  attackDelay: 2
-  damage: 10
+  attackDelay: 0.5
+  damage: 1
   audioSource: {fileID: 0}
   detectionDistance: 0
   enemyLayer:
@@ -1046,8 +1046,11 @@ MonoBehaviour:
   maxHealth: 6
   health: 6
   healthAnimator: {fileID: 670372479945697067}
+  sp: {fileID: 3455951136228049699}
   healthbar: {fileID: 0}
+  _flash: {fileID: 2100000, guid: 9c94d15a1338e304d8b3246c7ae7eb86, type: 2}
   t2: {fileID: 9067972563517255009}
+  sp2: {fileID: 4060165915406234013}
 --- !u!1 &8070007531603396872
 GameObject:
   m_ObjectHideFlags: 0

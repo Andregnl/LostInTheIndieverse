@@ -277,7 +277,9 @@ MonoBehaviour:
   maxHealth: 3
   health: 3
   healthAnimator: {fileID: 0}
+  sp: {fileID: 3455951136228049699}
   healthbar: {fileID: 0}
+  _flash: {fileID: 2100000, guid: 9c94d15a1338e304d8b3246c7ae7eb86, type: 2}
 --- !u!82 &7513886002692388047
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Health : MonoBehaviour
 {
@@ -9,8 +10,14 @@ public class Health : MonoBehaviour
     [SerializeField] protected float maxHealth = 100f;
     [SerializeField] protected float health = 100f;
 	[SerializeField] protected Animator healthAnimator;
+    [SerializeField] protected SpriteRenderer sp;
 	[SerializeField] Image healthbar;
+    [SerializeField] Material _flash;
+    private Material originalMaterial;
 
+    void Start(){
+        originalMaterial = sp.material;
+    }
     public float GetCurrentHealth(){
         return health;
     }
@@ -33,6 +40,9 @@ public class Health : MonoBehaviour
 
 			if (healthAnimator != null)
 				healthAnimator.SetTrigger("TakeDamage");
+            else{
+                StartCoroutine(PlayTakeDamage());
+            }
 		}
     }
 
@@ -43,4 +53,19 @@ public class Health : MonoBehaviour
 
         Object.Destroy(gameObject);
     }
+
+        public IEnumerator PlayTakeDamage()
+    {
+        if(sp != null)
+            sp.material = _flash;
+        float interval = 0.1f;
+
+        yield return new WaitForSeconds(interval / 2);
+        
+        if(sp != null)
+            sp.material = originalMaterial;
+
+        yield break;
+    }
+
 }

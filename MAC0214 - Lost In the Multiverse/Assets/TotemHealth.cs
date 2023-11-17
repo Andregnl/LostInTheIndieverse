@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TotemHealth : Health
 {
     [SerializeField] Animator t2;
+    [SerializeField] SpriteRenderer sp2;
     bool triggered = false;
     bool triggered2 = false;
 
@@ -14,6 +15,7 @@ public class TotemHealth : Health
         if(newHealth <= 0) Die();
         else
 		{
+            StartCoroutine(PlayTakeDamage());
 			health -= damage;
 
 			if (health <= maxHealth/2)
@@ -21,6 +23,7 @@ public class TotemHealth : Health
                 if(healthAnimator != null && !triggered){
 				    healthAnimator.SetTrigger("DestroyT1");
                     triggered = true;
+                    sp = sp2;
                 }
             }
 				

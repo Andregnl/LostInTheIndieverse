@@ -282,6 +282,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 6
   health: 6
+  healthAnimator: {fileID: 0}
+  sp: {fileID: 3455951136228049699}
+  healthbar: {fileID: 0}
+  _flash: {fileID: 2100000, guid: 9c94d15a1338e304d8b3246c7ae7eb86, type: 2}
 --- !u!82 &7513886002692388047
 AudioSource:
   m_ObjectHideFlags: 0
@@ -401,11 +405,11 @@ MonoBehaviour:
     m_Bits: 128
   visionObject: {fileID: 8668827536398961990}
   visionVectorOrigin: {fileID: 5191218350074066206}
+  shootOnStart: 1
   animator: {fileID: 4519596212436413930}
   spawnPoint: {fileID: 8590202365982852579}
   beamRay: {fileID: -1886578645559490105}
   distance: 15
-  shootOnStart: 1
 --- !u!120 &-1886578645559490105
 LineRenderer:
   serializedVersion: 2

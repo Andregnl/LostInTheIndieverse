@@ -7,6 +7,9 @@ public class SpikeProjectile : MonoBehaviour
 	[SerializeField] GameObject flippableObjects;
 	[SerializeField] float speed;
 	[SerializeField] AudioClip collisionClip;
+    [SerializeField] protected SpriteRenderer sp;
+    [SerializeField] Material _flash;
+    private Material originalMaterial;
 
 	private AudioSource audioSource;
 
@@ -23,6 +26,7 @@ public class SpikeProjectile : MonoBehaviour
 		audioSource = GameObject.
 			FindGameObjectWithTag("ProjectileAudioSource").
 			GetComponent<AudioSource>();
+        originalMaterial = sp.material;
 	}
 
 	void FixedUpdate()
@@ -58,9 +62,22 @@ public class SpikeProjectile : MonoBehaviour
 
 	public virtual void ExpireVisualSequence()
 	{
-		Destroy(gameObject);
+		StartCoroutine(PlayTakeDamage());
 	}
+        public IEnumerator PlayTakeDamage()
+    {
+        if(sp != null)
+            sp.material = _flash;
+        float interval = 0.1f;
 
+        yield return new WaitForSeconds(interval / 2);
+        
+        if(sp != null)
+            sp.material = originalMaterial;
+		Destroy(gameObject);
+
+        yield break;
+    }
 	public virtual void ExecuteProjectileBehavior()
 	{
 		Vector3 toMove = new Vector3(speed * Time.fixedDeltaTime, 0.0f);

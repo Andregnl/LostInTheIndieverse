@@ -280,6 +280,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   health: 1
+  healthAnimator: {fileID: 0}
+  sp: {fileID: 0}
+  healthbar: {fileID: 0}
+  _flash: {fileID: 2100000, guid: 9c94d15a1338e304d8b3246c7ae7eb86, type: 2}
 --- !u!114 &3150703084142691934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,10 +297,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 1495181622373469133}
-  projectile: {fileID: 0}
+  projectile: {fileID: 3400100857732972220}
   attackDelay: 3
   damage: 10
   audioSource: {fileID: 0}
+  detectionDistance: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  visionObject: {fileID: 0}
+  visionVectorOrigin: {fileID: 0}
+  shootOnStart: 1
   animator: {fileID: 5535443712760268328}
   spawnPoint: {fileID: 0}
   currency: 25
