@@ -25,6 +25,7 @@ public class SnailScript : EnemyBasics
             }
             else{
                 StrikeCurrentTarget();
+                IsBase();
             }
 			currentTime = 0.0f;
 		}
