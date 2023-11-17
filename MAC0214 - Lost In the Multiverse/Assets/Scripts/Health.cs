@@ -12,10 +12,11 @@ public class Health : MonoBehaviour
 	[SerializeField] protected Animator healthAnimator;
     [SerializeField] protected SpriteRenderer sp;
 	[SerializeField] Image healthbar;
-    [SerializeField] Material _flash;
+    private Material _flash;
     private Material originalMaterial;
 
     void Start(){
+        _flash = Resources.Load("Flash", typeof(Material)) as Material;
         originalMaterial = sp.material;
     }
     public float GetCurrentHealth(){

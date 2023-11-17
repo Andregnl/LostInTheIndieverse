@@ -5219,7 +5219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ab844b57264a44a8b24260160b6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 150
+  cost: 50
   prefabToInstantiate: {fileID: 7642965045787027164, guid: fdf2d75281fed41458e824a8b621b542, type: 3}
 --- !u!58 &861041572
 CircleCollider2D:
@@ -6409,7 +6409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ab844b57264a44a8b24260160b6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 25
   prefabToInstantiate: {fileID: 7642965045787027164, guid: 02e329de529226297a9df897bc56a34e, type: 3}
 --- !u!1 &1037997086
 GameObject:
@@ -7826,9 +7826,8 @@ MonoBehaviour:
   waves:
   - name: TestWave
     enemy:
-    - {fileID: 1785577725898590725, guid: 4c2bdd220f5e036469d5811aa659e488, type: 3}
-    - {fileID: 1785577725898590725, guid: 1f63517044c1d5d4585e8041670eb531, type: 3}
-    count: 0300000001000000
+    - {fileID: 1785577725898590725, guid: 7f9c06be241e8ec4999deab3dff199c5, type: 3}
+    count: 01000000
     rate: 1
     randSpawn: 0
   - name: TestWave
@@ -7842,20 +7841,22 @@ MonoBehaviour:
     enemy:
     - {fileID: 1785577725898590725, guid: 2a1fea04f5ff80649919877ac7c09c2b, type: 3}
     count: 03000000
-    rate: 2
-    randSpawn: 1
+    rate: 1
+    randSpawn: 0
   - name: TestWave
     enemy:
+    - {fileID: 1785577725898590725, guid: 4c2bdd220f5e036469d5811aa659e488, type: 3}
     - {fileID: 1785577725898590725, guid: 1f63517044c1d5d4585e8041670eb531, type: 3}
-    count: 03000000
-    rate: 2
+    count: 0300000003000000
+    rate: 0.5
     randSpawn: 0
   spawnPoints:
   - {fileID: 455204256}
   - {fileID: 817117366}
   - {fileID: 1846552969}
+  - {fileID: 1955784429}
   timeBetweenWaves: 2
-  loop: 0
+  loop: 1
 --- !u!4 &1322384200
 Transform:
   m_ObjectHideFlags: 0
@@ -8652,7 +8653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ab844b57264a44a8b24260160b6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 120
+  cost: 150
   prefabToInstantiate: {fileID: 7642965045787027164, guid: 06a691ac977072f4db33cb41551c7367, type: 3}
 --- !u!58 &1558811579
 CircleCollider2D:
@@ -8937,7 +8938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018ab844b57264a44a8b24260160b6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 150
+  cost: 200
   prefabToInstantiate: {fileID: 7642965045787027164, guid: b254af1a6ae45524383806d06eb010ba, type: 3}
 --- !u!58 &1622681652
 CircleCollider2D:
@@ -18214,7 +18215,7 @@ PrefabInstance:
       objectReference: {fileID: 778047525}
     - target: {fileID: 8267747078143311577, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
       propertyPath: health
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8267747078143311577, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
       propertyPath: healthbar
@@ -18222,7 +18223,7 @@ PrefabInstance:
       objectReference: {fileID: 2060453195}
     - target: {fileID: 8267747078143311577, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8267747078143311577, guid: 8e8a47fa4d5deb37a9a99ec00fbf3cbf, type: 3}
       propertyPath: healthAnimator
@@ -18243,7 +18244,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 835488959834931880, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
       propertyPath: playerCurrency
-      value: 9999
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 835488959834931880, guid: 7d5d115eb4c941849bcbef2e8aaa549c, type: 3}
       propertyPath: currencyTextTransform

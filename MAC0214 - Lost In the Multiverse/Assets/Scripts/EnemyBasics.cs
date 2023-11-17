@@ -7,9 +7,9 @@ public class EnemyBasics : Entity
     [SerializeField] private float speed;
     [SerializeField] private float damage;
     [SerializeField] protected float damageInterval;
-    [SerializeField] Transform visionObject;
+    [SerializeField] protected Transform visionObject;
     [SerializeField] float detectionDistance = 20.0f;
-    [SerializeField] LayerMask playerAndGroundLayer;
+    [SerializeField] protected LayerMask playerAndGroundLayer;
     [SerializeField] protected Animator animator;
 	[SerializeField] AudioSource audioSource;
     private bool hitBase = false;
@@ -43,7 +43,7 @@ public class EnemyBasics : Entity
                                              Vector3.Normalize(visionObject.transform.position - transform.position),
                                              detectionDistance,
                                              playerAndGroundLayer);
-        Debug.DrawRay(transform.position, Vector3.Normalize(visionObject.transform.position - transform.position) * detectionDistance, Color.green);
+        //Debug.DrawRay(transform.position, Vector3.Normalize(visionObject.transform.position - transform.position) * detectionDistance, Color.green);
 
         if (hit.collider != null)
         {
