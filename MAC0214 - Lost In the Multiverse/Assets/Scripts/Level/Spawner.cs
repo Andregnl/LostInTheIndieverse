@@ -138,14 +138,16 @@ public class WaveSpawner : MonoBehaviour {
 		if(rand)
 		{
 			Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
-			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation, _sp.transform);
+			enemy.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
 			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());
 		}
 		else{
 			if(spawnIndex == null) spawnIndex = 0;
 			Transform _sp = spawnPoints[ spawnIndex ];
-			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation, _sp.transform);
+			enemy.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
 			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());			
 		}
