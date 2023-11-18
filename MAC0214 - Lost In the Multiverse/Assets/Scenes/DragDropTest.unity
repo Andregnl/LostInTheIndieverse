@@ -800,7 +800,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14.0625
+  orthographic size: 15.941011
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2527,6 +2527,7 @@ MonoBehaviour:
   cost: 100
   remover: 0
   prefabToInstantiate: {fileID: 7642965045787027164, guid: df678cbc726483d4ebe528cd29eee150, type: 3}
+  previewObject: {fileID: 7642965045787027164, guid: 71fb3ef76947bc7299fcdb36f0cf695c, type: 3}
 --- !u!58 &386869621
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5351,6 +5352,7 @@ MonoBehaviour:
   cost: 50
   remover: 0
   prefabToInstantiate: {fileID: 7642965045787027164, guid: fdf2d75281fed41458e824a8b621b542, type: 3}
+  previewObject: {fileID: 7642965045787027164, guid: fdab549e91772836db6de9057d4bdb19, type: 3}
 --- !u!58 &861041572
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6542,6 +6544,7 @@ MonoBehaviour:
   cost: 25
   remover: 0
   prefabToInstantiate: {fileID: 7642965045787027164, guid: 02e329de529226297a9df897bc56a34e, type: 3}
+  previewObject: {fileID: 7642965045787027164, guid: e8aeb95ef377ea095af69a2791154437, type: 3}
 --- !u!1 &1037997086
 GameObject:
   m_ObjectHideFlags: 0
@@ -8805,6 +8808,7 @@ MonoBehaviour:
   cost: 150
   remover: 0
   prefabToInstantiate: {fileID: 7642965045787027164, guid: 06a691ac977072f4db33cb41551c7367, type: 3}
+  previewObject: {fileID: 0}
 --- !u!58 &1558811579
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8941,6 +8945,7 @@ MonoBehaviour:
   cost: 50
   remover: 0
   prefabToInstantiate: {fileID: 7642965045787027164, guid: e18c5c33109a480488ca0ad693d8c1d5, type: 3}
+  previewObject: {fileID: 7642965045787027164, guid: 0ba56d2634a02ac91bf6ea0c0e79900b, type: 3}
 --- !u!58 &1564911647
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9227,6 +9232,7 @@ MonoBehaviour:
   cost: 200
   remover: 0
   prefabToInstantiate: {fileID: 7642965045787027164, guid: b254af1a6ae45524383806d06eb010ba, type: 3}
+  previewObject: {fileID: 7642965045787027164, guid: 0070635dd2a64802dad1bf4aae386291, type: 3}
 --- !u!58 &1622681652
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12831,6 +12837,7 @@ MonoBehaviour:
   cost: 0
   remover: 1
   prefabToInstantiate: {fileID: 0}
+  previewObject: {fileID: 0}
 --- !u!58 &2110169523
 CircleCollider2D:
   m_ObjectHideFlags: 0

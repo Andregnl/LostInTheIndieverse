@@ -111,7 +111,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 10
   m_Sprite: {fileID: -1057548219, guid: 4307cdea4abfc24f0a2e2795e6ca6289, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25493e4e09fe71e9914b6a82d03555a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defensiveStructure: {fileID: 382364136086667860}
+  defensiveStructure: {fileID: 0}
 --- !u!1 &7642965045787027164
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,12 +164,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234089016547257935}
-  - component: {fileID: 382364136086667860}
-  - component: {fileID: 6513591173126174194}
-  - component: {fileID: 2253677243456983259}
-  - component: {fileID: 7513886002692388047}
+  - component: {fileID: 2801773308471536901}
   m_Layer: 6
-  m_Name: Tower
+  m_Name: TowerPreview
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +188,7 @@ Transform:
   - {fileID: 8217435670166460163}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &382364136086667860
+--- !u!114 &2801773308471536901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,182 +197,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7642965045787027164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381502c997a5071ceb2bc001027aeb4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ef47b9f5617b3754bfe761bf89d9594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 1495181622373469133}
-  projectile: {fileID: 1567019949314977001, guid: 8c4090bb236b92ab38ec9f8596529b51, type: 3}
-  attackDelay: 3
-  damage: 1
-  audioSource: {fileID: 7513886002692388047}
-  detectionDistance: 16
+  projectile: {fileID: 0}
+  attackDelay: 2
+  damage: 10
+  audioSource: {fileID: 0}
+  detectionDistance: 0
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 128
-  visionObject: {fileID: 8668827536398961990}
-  visionVectorOrigin: {fileID: 8070007531603396872}
+    m_Bits: 0
+  visionObject: {fileID: 0}
+  visionVectorOrigin: {fileID: 0}
   shootOnStart: 1
-  animator: {fileID: 5535443712760268328}
-  spawnPoint: {fileID: 8590202365982852579}
---- !u!61 &6513591173126174194
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642965045787027164}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.019477844, y: 1.1589394}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.1686783, y: 5.304631}
-  m_EdgeRadius: 0
---- !u!114 &2253677243456983259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642965045787027164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454af217423ada84783ecd6a55d3ab90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
-  health: 3
-  healthAnimator: {fileID: 0}
-  sp: {fileID: 3455951136228049699}
-  healthbar: {fileID: 0}
-  _flash: {fileID: 2100000, guid: 9c94d15a1338e304d8b3246c7ae7eb86, type: 2}
---- !u!82 &7513886002692388047
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642965045787027164}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -6657220687289035368, guid: e7432fa9fb55b3949a717b0d0200eb75, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 907efb900b73048be876cccf330c040f, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &8070007531603396872
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +317,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 11
   m_Sprite: {fileID: 1146461150, guid: 7d3dbbafa7bd0cc5b9a80217518ddb81, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
