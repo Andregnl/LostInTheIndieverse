@@ -837,9 +837,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 234089016547257935}
+  - component: {fileID: 3261841466194945848}
   - component: {fileID: 6513591173126174194}
   - component: {fileID: 7513886002692388047}
-  - component: {fileID: 3261841466194945848}
   - component: {fileID: 3393961363972609531}
   m_Layer: 6
   m_Name: Totem
@@ -864,6 +864,32 @@ Transform:
   - {fileID: 8217435670166460163}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3261841466194945848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642965045787027164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325b4b58f4e417846b993ecc7cc8ef1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flippableObjects: {fileID: 1495181622373469133}
+  projectile: {fileID: 0}
+  attackDelay: 0.5
+  damage: 1
+  audioSource: {fileID: 7513886002692388047}
+  detectionDistance: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  visionObject: {fileID: 0}
+  visionVectorOrigin: {fileID: 0}
+  shootOnStart: 1
+  t1: {fileID: 2829824369369248299}
+  t2: {fileID: 5375372268545575125}
 --- !u!61 &6513591173126174194
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1005,32 +1031,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3261841466194945848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642965045787027164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 325b4b58f4e417846b993ecc7cc8ef1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flippableObjects: {fileID: 1495181622373469133}
-  projectile: {fileID: 0}
-  attackDelay: 0.5
-  damage: 1
-  audioSource: {fileID: 7513886002692388047}
-  detectionDistance: 0
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  visionObject: {fileID: 0}
-  visionVectorOrigin: {fileID: 0}
-  shootOnStart: 1
-  t1: {fileID: 2829824369369248299}
-  t2: {fileID: 5375372268545575125}
 --- !u!114 &3393961363972609531
 MonoBehaviour:
   m_ObjectHideFlags: 0

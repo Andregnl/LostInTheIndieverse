@@ -205,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 1495181622373469133}
   projectile: {fileID: 1567019949314977001, guid: 8c4090bb236b92ab38ec9f8596529b51, type: 3}
-  attackDelay: 3
+  attackDelay: 2
   damage: 1
   audioSource: {fileID: 7513886002692388047}
   detectionDistance: 16
@@ -274,8 +274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454af217423ada84783ecd6a55d3ab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  health: 3
+  maxHealth: 2
+  health: 2
   healthAnimator: {fileID: 0}
   sp: {fileID: 3455951136228049699}
   healthbar: {fileID: 0}
