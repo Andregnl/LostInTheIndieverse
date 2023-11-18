@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 7954681284307498919}
-  collisionClip: {fileID: 0}
+  collisionClip: {fileID: 8300000, guid: 0c3a9d42610596541a5eadd1d401b336, type: 3}
 --- !u!1 &1892225233870270899
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flippableObjects: {fileID: 0}
-  collisionClip: {fileID: 0}
+  collisionClip: {fileID: 8300000, guid: 0c3a9d42610596541a5eadd1d401b336, type: 3}
 --- !u!1 &7954681284307498919
 GameObject:
   m_ObjectHideFlags: 0

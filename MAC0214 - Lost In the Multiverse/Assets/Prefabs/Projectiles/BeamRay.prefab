@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c874699c06dfd064089d4fafea20043d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionClip: {fileID: 0}
+  collisionClip: {fileID: 8300000, guid: 0c3a9d42610596541a5eadd1d401b336, type: 3}
   damageInterval: 0.15
   maxDuration: 10
   beamRay: {fileID: 3187543993627450589}
@@ -117,7 +117,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,8 +135,8 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -635604009
+  m_SortingLayer: 3
   m_SortingOrder: 30
   m_Positions:
   - {x: 0, y: 0, z: 0}

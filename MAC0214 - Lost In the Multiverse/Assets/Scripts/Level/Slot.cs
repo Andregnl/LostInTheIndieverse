@@ -12,9 +12,15 @@ public class Slot : MonoBehaviour
 	[SerializeField] private bool canPut = true;
 
 	public void OnDrop(DragAndDropItem dragAndDropItem)
-	{
-		if (!dragAndDropItem || instantiatedObject != null || !canPut) return;
+	{ 
+		if(dragAndDropItem.remover == true && instantiatedObject != null)
+		{
+			Object.Destroy(this.gameObject.transform.GetChild(0).gameObject);
+			return;
+		}
+		if(dragAndDropItem.prefabToInstantiate == null) return;
 
+		if (!dragAndDropItem || instantiatedObject != null || !canPut) return;
 		instantiatedObject = Instantiate(dragAndDropItem.prefabToInstantiate,
 										 transform.position,
 										 transform.rotation,
