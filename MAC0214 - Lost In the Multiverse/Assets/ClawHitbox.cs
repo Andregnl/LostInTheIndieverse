@@ -37,6 +37,7 @@ public class ClawHitbox : MonoBehaviour
 		Debug.Log("Projectile hit something" + col.gameObject.name + " " + col.gameObject.tag);
 		
         thatEnemy.GetComponent<Health>().TakeDamage(damage);
+		thatEnemy.GetComponent<EnemyBasics>().ApplyKnockback(Direction.LEFT);
 	}
 
 
