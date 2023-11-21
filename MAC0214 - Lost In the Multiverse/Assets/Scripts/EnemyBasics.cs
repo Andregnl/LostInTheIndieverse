@@ -35,11 +35,14 @@ public class EnemyBasics : Entity
     IEnumerator Knockback(Direction dir)
     {
         isKnockback = true;
-        if(dir == Direction.LEFT)
+        if(dir == Direction.LEFT && thisDirection == Direction.LEFT)
             transform.Translate(new Vector2(-1,0) * 30 * 0.1f);
-        else
+        else if(dir == Direction.RIGHT && thisDirection == Direction.LEFT)
             transform.Translate(new Vector2(1,0) * 30 * 0.1f);
-
+        else if(dir == Direction.LEFT && thisDirection == Direction.RIGHT)
+            transform.Translate(new Vector2(1,0) * 30 * 0.1f);
+        else if(dir == Direction.RIGHT && thisDirection == Direction.RIGHT)
+            transform.Translate(new Vector2(-1,0) * 30 * 0.1f);
         // Wait for a short duration to simulate the knockback effect
         yield return new WaitForSeconds(0.2f);
 

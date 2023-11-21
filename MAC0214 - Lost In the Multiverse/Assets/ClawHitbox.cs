@@ -9,6 +9,7 @@ public class ClawHitbox : MonoBehaviour
 	[SerializeField] AudioClip collisionClip;
     [SerializeField] protected Material _flash;
     [SerializeField] protected SpriteRenderer sp;
+	[SerializeField] private bool _rightSide;
     private Material originalMaterial;
 	private AudioSource audioSource;
 
@@ -37,7 +38,11 @@ public class ClawHitbox : MonoBehaviour
 		Debug.Log("Projectile hit something" + col.gameObject.name + " " + col.gameObject.tag);
 		
         thatEnemy.GetComponent<Health>().TakeDamage(damage);
-		thatEnemy.GetComponent<EnemyBasics>().ApplyKnockback(Direction.LEFT);
+		if(_rightSide)
+			thatEnemy.GetComponent<EnemyBasics>().ApplyKnockback(Direction.LEFT);
+		else
+			thatEnemy.GetComponent<EnemyBasics>().ApplyKnockback(Direction.RIGHT);
+
 	}
 
 
