@@ -13,16 +13,40 @@ public class EnemyBasics : Entity
     [SerializeField] protected Animator animator;
 	[SerializeField] AudioSource audioSource;
     private bool hitBase = false;
-
+    private bool isKnockback = false;
     protected GameObject currentTarget;
     
     public virtual void Walk() {
         if (currentTarget != null) { return; }
 
-		if (thisDirection == Direction.LEFT)
-			transform.Translate(new Vector2(1, 0) * speed * Time.deltaTime);
-		else
-			transform.Translate(new Vector2(-1, 0) * speed * Time.deltaTime);
+        if(!isKnockback)
+        {
+            if (thisDirection == Direction.LEFT)
+                transform.Translate(new Vector2(1, 0) * speed * Time.deltaTime);
+            else
+                transform.Translate(new Vector2(-1, 0) * speed * Time.deltaTime);
+        }
+    }
+
+    public virtual void ApplyKnockback(Direction dir)
+    {
+        StartCoroutine(Knockback(dir));
+    }
+    IEnumerator Knockback(Direction dir)
+    {
+        isKnockback = true;
+        if(dir == Direction.LEFT && thisDirection == Direction.LEFT)
+            transform.Translate(new Vector2(-1,0) * 30 * 0.1f);
+        else if(dir == Direction.RIGHT && thisDirection == Direction.LEFT)
+            transform.Translate(new Vector2(1,0) * 30 * 0.1f);
+        else if(dir == Direction.LEFT && thisDirection == Direction.RIGHT)
+            transform.Translate(new Vector2(1,0) * 30 * 0.1f);
+        else if(dir == Direction.RIGHT && thisDirection == Direction.RIGHT)
+            transform.Translate(new Vector2(-1,0) * 30 * 0.1f);
+        // Wait for a short duration to simulate the knockback effect
+        yield return new WaitForSeconds(0.2f);
+
+        isKnockback = false;   
     }
 
     public void SetMovementSpeed (float newspeed)
