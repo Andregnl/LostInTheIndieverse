@@ -31,4 +31,9 @@ public class Entity : MonoBehaviour
     {
         return row;
     }
+	
+	public Direction GetDirection()
+	{
+		return thisDirection;
+	}
 }

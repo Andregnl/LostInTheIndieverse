@@ -8,7 +8,7 @@ public class ShieldBugHealth : Health
     [SerializeField] private int shieldHits = 3;
 
     public override void TakeDamage(float damage){
-        
+        StartCoroutine(PlayTakeDamage());
         float newHealth = health - damage;
         
         if (shieldHits <= 0)

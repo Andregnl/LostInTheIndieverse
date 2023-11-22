@@ -8,8 +8,9 @@ public class DragAndDropItem : MonoBehaviour
     private Vector3 originPosition;
 
     public int cost = 50;
-
+    public bool remover = false;
 	public GameObject prefabToInstantiate;
+	public GameObject previewObject;
 
     // Start is called before the first frame update
     void Start()

@@ -25,6 +25,7 @@ public class WaveSpawner : MonoBehaviour {
 	public Transform[] spawnPoints;
 
 	public float timeBetweenWaves = 5f;
+	public bool loop;
 	private float waveCountdown;
 	public float WaveCountdown
 	{
@@ -65,7 +66,7 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (waveCountdown <= 0)
 		{
-			if (state != SpawnState.SPAWNING && state != SpawnState.FINISHING)
+			if ((state != SpawnState.SPAWNING && state != SpawnState.FINISHING))
 			{
 				StartCoroutine( SpawnWave ( waves[nextWave] ) );
 			}
@@ -85,9 +86,12 @@ public class WaveSpawner : MonoBehaviour {
 
 		if (nextWave + 1 > waves.Length - 1)
 		{
-			//nextWave = 0;
-			Debug.Log("ALL WAVES COMPLETE! Looping...");
-			state = SpawnState.FINISHING;
+			if(loop){
+				nextWave = 0;
+			}
+			else{
+							state = SpawnState.FINISHING;
+			}
 		}
 		else
 		{
@@ -134,13 +138,16 @@ public class WaveSpawner : MonoBehaviour {
 		if(rand)
 		{
 			Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
-			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation, _sp.transform);
+			enemy.localScale = new Vector3(0.4f, 0.4f, 0.4f);
 			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
 			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());
 		}
 		else{
+			if(spawnIndex == null) spawnIndex = 0;
 			Transform _sp = spawnPoints[ spawnIndex ];
-			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation, _sp.transform);
+			enemy.localScale = new Vector3(0.4f, 0.4f, 0.4f);
 			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
 			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());			
 		}

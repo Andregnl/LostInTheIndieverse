@@ -61,11 +61,10 @@ Transform:
   m_GameObject: {fileID: 3400100857732972220}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.36, z: 0}
-  m_LocalScale: {x: 5.0405, y: 5.0405, z: 5.0405}
+  m_LocalPosition: {x: 0, y: 2.15, z: 0}
+  m_LocalScale: {x: 15.732913, y: 15.732913, z: 15.732913}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7822167318964421354}
+  m_Children: []
   m_Father: {fileID: 8217435670166460163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3455951136228049699
@@ -109,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: -855961567
   m_SortingLayer: 1
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1057548219, guid: 4307cdea4abfc24f0a2e2795e6ca6289, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a8a726e79308d2d4fb406ade12ccf856, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,8 +204,15 @@ MonoBehaviour:
   flippableObjects: {fileID: 1495181622373469133}
   projectile: {fileID: 1567019949314977001, guid: 5cfa28df0e45c814ca4cfaad880834b7, type: 3}
   attackDelay: 20
-  damage: 1000
+  damage: 10
   audioSource: {fileID: 7513886002692388047}
+  detectionDistance: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  visionObject: {fileID: 0}
+  visionVectorOrigin: {fileID: 0}
+  shootOnStart: 1
   animator: {fileID: 2895598260650209212}
   spawnPoint: {fileID: 8590202365982852579}
 --- !u!114 &5530650511363372473
@@ -223,6 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 100
+  healthAnimator: {fileID: 0}
+  sp: {fileID: 3455951136228049699}
+  healthbar: {fileID: 0}
+  _flash: {fileID: 2100000, guid: 9c94d15a1338e304d8b3246c7ae7eb86, type: 2}
   exp: {fileID: 2893904967215277505}
 --- !u!61 &6513591173126174194
 BoxCollider2D:
@@ -256,7 +266,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.019477844, y: 1.1589394}
+  m_Offset: {x: 0.019477844, y: -0.13071492}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -267,7 +277,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1686783, y: 5.304631}
+  m_Size: {x: 2.1686783, y: 1.7921944}
   m_EdgeRadius: 0
 --- !u!82 &7513886002692388047
 AudioSource:
@@ -279,10 +289,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6657220687289035368, guid: e7432fa9fb55b3949a717b0d0200eb75, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 907efb900b73048be876cccf330c040f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4f3339daa42e96f43bca3d0341c38fd1, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
-  m_Pitch: 1
+  m_Volume: 0.458
+  m_Pitch: 0.53
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -365,90 +375,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &8343235703638697852
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7822167318964421354}
-  - component: {fileID: 2197161406474629212}
-  m_Layer: 6
-  m_Name: TowerWeapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7822167318964421354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343235703638697852}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.069, z: 0}
-  m_LocalScale: {x: 1.6806, y: 1.6806, z: 1.6806}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1338889808896307505}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &2197161406474629212
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8343235703638697852}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -855961567
-  m_SortingLayer: 1
-  m_SortingOrder: 10
-  m_Sprite: {fileID: 1146461150, guid: 7d3dbbafa7bd0cc5b9a80217518ddb81, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &8668827536398961990
 GameObject:
   m_ObjectHideFlags: 0

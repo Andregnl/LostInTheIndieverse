@@ -15,4 +15,8 @@ public class ExplosiveTowerEvents : MonoBehaviour
     {
         defensiveStructure.ExpireVisual();
     }
+
+	public void PlaySound(){
+		defensiveStructure.PlayShootSound();
+	}
 }

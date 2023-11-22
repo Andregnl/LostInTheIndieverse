@@ -15,6 +15,8 @@ public class ExplosionScript : MonoBehaviour
 		audioSource = GameObject.
 			FindGameObjectWithTag("ProjectileAudioSource").
 			GetComponent<AudioSource>();
+				audioSource.PlayOneShot(collisionClip);
+
 	}
 
 	void OnTriggerEnter2D(Collider2D col)

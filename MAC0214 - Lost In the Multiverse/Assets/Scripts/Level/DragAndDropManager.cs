@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DragAndDropManager : MonoBehaviour
 {
     private GameObject dragObject;
     private Vector3 mouseOffset;
+	private Slot currentPreview = null;
 
     public int playerCurrency = 120;
 
-    [SerializeField] Text currencyLabel;
+    [SerializeField] TextMeshProUGUI currencyLabel;
     [SerializeField] Transform currencyTextTransform;
 
     // Start is called before the first frame update
@@ -42,8 +44,33 @@ public class DragAndDropManager : MonoBehaviour
 
         if (dragObject)
         {
+            DragAndDropItem dragAndDropItem = (DragAndDropItem) dragObject.GetComponent(typeof(DragAndDropItem));
+
             dragObject.transform.position = mousePosition + mouseOffset;
+            Collider2D[] targetObjects = Physics2D.OverlapPointAll(mousePosition);
+
+			bool reachedSlot = false;
+			foreach (var targetObject in targetObjects)
+			{
+				if (targetObject && targetObject.CompareTag("Slot"))
+				{
+					Slot slot = targetObject.GetComponent<Slot>();
+					targetObject.GetComponent<Slot>().OnPreview(dragAndDropItem);
+
+					if (currentPreview != null && currentPreview != slot)
+						currentPreview.DisablePreview();
+
+					currentPreview = targetObject.GetComponent<Slot>();
+					reachedSlot = true;
+				}
+			}
+
+			if (!reachedSlot && currentPreview != null) currentPreview.DisablePreview();
         }
+		else
+		{
+			if (currentPreview != null) currentPreview.DisablePreview();
+		}
 
         if (Input.GetMouseButtonUp(0) && dragObject)
         {
@@ -74,7 +101,7 @@ public class DragAndDropManager : MonoBehaviour
 
     void UpdateCurrencyLabel()
     {
-        currencyLabel.text = "Currency: " + playerCurrency;
+        currencyLabel.text = "$ " + playerCurrency;
     }
 
     public void UpdateCurrency(int amount){

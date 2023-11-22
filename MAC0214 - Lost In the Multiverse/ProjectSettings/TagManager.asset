@@ -54,3 +54,6 @@ TagManager:
   - name: Slot
     uniqueID: 2736820617
     locked: 0
+  - name: Effects
+    uniqueID: 3659363287
+    locked: 0
