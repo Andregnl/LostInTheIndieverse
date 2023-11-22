@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DragAndDropManager : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class DragAndDropManager : MonoBehaviour
 
     public int playerCurrency = 120;
 
-    [SerializeField] Text currencyLabel;
+    [SerializeField] TextMeshProUGUI currencyLabel;
     [SerializeField] Transform currencyTextTransform;
 
     // Start is called before the first frame update
@@ -100,7 +101,7 @@ public class DragAndDropManager : MonoBehaviour
 
     void UpdateCurrencyLabel()
     {
-        currencyLabel.text = "Currency: " + playerCurrency;
+        currencyLabel.text = "$ " + playerCurrency;
     }
 
     public void UpdateCurrency(int amount){
