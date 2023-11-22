@@ -139,7 +139,7 @@ public class WaveSpawner : MonoBehaviour {
 		{
 			Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
 			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation, _sp.transform);
-			enemy.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+			enemy.localScale = new Vector3(0.4f, 0.4f, 0.4f);
 			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
 			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());
 		}
@@ -147,7 +147,7 @@ public class WaveSpawner : MonoBehaviour {
 			if(spawnIndex == null) spawnIndex = 0;
 			Transform _sp = spawnPoints[ spawnIndex ];
 			Transform enemy = Instantiate(_enemy, _sp.position, _sp.rotation, _sp.transform);
-			enemy.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+			enemy.localScale = new Vector3(0.4f, 0.4f, 0.4f);
 			enemy.GetComponent<EnemyBasics>().SetDirection(_sp.GetComponent<Slot>().GetDirection());
 			enemy.GetComponent<EnemyBasics>().SetRow(_sp.GetComponent<Slot>().GetRow());			
 		}
